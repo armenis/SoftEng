@@ -11,21 +11,6 @@ import Database.JDBCMySQLConnection;
 
 public class Data {
 	
-/*	String[] getTime(){
-		String	time[] =
-			{	
-				"03:00","08:00","09:00","10:00","15:50","20:00","22:00","23:00"	
-			};
-		return time;
-	}
-	
-	Double[] getPrice(){
-		Double	prices[] =
-			{
-				20.50,25.00,30.00,40.50
-			};
-		return prices;
-	}*/
 	
 	public double calculateChange(String gp,double price){
 		double change = 0.00;
@@ -244,4 +229,217 @@ public class Data {
 		
 		return times;
 	}
+
+	static final void insertPerioxes(String perioxh){
+		
+		 //ResultSet rs = null;
+	     Connection connection = null;
+	     PreparedStatement ps =null;
+
+
+	     try {
+	            connection = JDBCMySQLConnection.getConnection();
+	            
+	            ps = connection.prepareStatement("INSERT INTO test.perioxes_test (пеяиовг) VALUES ( ? )");
+	            ps.setString(1, perioxh);
+	            ps.executeUpdate();
+
+	         
+   
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            if (connection != null) {
+	                try {
+	                    connection.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	     
+	    
+		
+		
+	}
+
+	static final void insertRoutes(String perioxh,String hmera){
+		
+		 int pid=0;
+		 int mid=0;
+		 ResultSet rs = null;
+		 ResultSet rs2 = null;
+		 ResultSet rs3 = null;
+	     Connection connection = null;
+	     PreparedStatement ps =null;
+	     PreparedStatement ps2 =null;
+	     PreparedStatement ps3 =null;
+	     try {
+	            connection = JDBCMySQLConnection.getConnection();
+	            
+	            ps = connection.prepareStatement("SELECT pid from test.perioxes_test WHERE пеяиовг= ? ");
+	            ps.setString(1, perioxh);
+	            rs = ps.executeQuery();
+	            
+	            
+	           
+
+	            while(rs.next()) {
+	            	
+	            	
+	                pid = rs.getInt("pid");
+	                
+	            }
+	            
+	            
+	            
+	            ps2 = connection.prepareStatement("SELECT mid from test.meres WHERE глеяес= ? ");
+	            ps2.setString(1,hmera );
+	            rs2 = ps2.executeQuery();
+	            
+	            while(rs2.next()) {
+	            	
+	            	mid = rs2.getInt("mid");
+	            	
+	            }
+	            
+	            ps3 = connection.prepareStatement("INSERT INTO test.routes_test (pid, mid) VALUES (? , ?)");
+	            ps3.setInt(1,pid );
+	            ps3.setInt(2,mid );
+	            ps3.executeUpdate();
+	            
+	            
+	           
+	            
+	            
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            if (connection != null) {
+	                try {
+	                    connection.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	     
+	    //System.out.println("Initial size: " + routes.size());
+	    //System.out.println(pid);
+	    //System.out.println(days);
+	}
+
+	static final void insertTimes(String perioxh,Double price){
+
+		
+		int pid=0;
+		 ResultSet rs = null;
+	     Connection connection = null;
+	     PreparedStatement ps =null;
+	     PreparedStatement ps2 =null;
+	     
+	     try {
+	            connection = JDBCMySQLConnection.getConnection();
+	            
+	            ps = connection.prepareStatement("SELECT pid from test.perioxes_test WHERE пеяиовг= ? ");
+	            ps.setString(1, perioxh);
+	            rs = ps.executeQuery();
+
+	            while(rs.next()) {
+	            	
+	            	
+	                pid = rs.getInt("pid");
+	                
+	            }
+
+	            ps2 = connection.prepareStatement("INSERT INTO test.times_test (тилг, pid) VALUES (? , ?) ");
+	            ps2.setDouble(1, price);
+	            ps2.setInt(2,pid);
+	            ps2.executeUpdate();
+	            
+
+	            
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            if (connection != null) {
+	                try {
+	                    connection.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	     
+	    //System.out.println("Initial size: " + routes.size());
+	    //System.out.println(pid);
+	    //System.out.println(days);
+	}
+	
+	static final void insertWres(String perioxh,String wra){
+		 int pid=0;
+		 int wid=0;
+		 ResultSet rs = null;
+		 ResultSet rs2 = null;
+		 ResultSet rs3 = null;
+	     Connection connection = null;
+	     PreparedStatement ps =null;
+	     PreparedStatement ps2 =null;
+	     PreparedStatement ps3 =null;
+	     try {
+	            connection = JDBCMySQLConnection.getConnection();
+	            
+	            ps = connection.prepareStatement("SELECT pid from test.perioxes_test WHERE пеяиовг= ? ");
+	            ps.setString(1, perioxh);
+	            rs = ps.executeQuery();
+	            
+	            
+	           
+
+	            while(rs.next()) {
+	            	
+	            	
+	                pid = rs.getInt("pid");
+	                
+	            }
+	            
+	            
+	            
+	            ps2 = connection.prepareStatement("SELECT wid from test.wres WHERE ыяес= ? ");
+	            ps2.setString(1,wra );
+	            rs2 = ps2.executeQuery();
+	            
+	            while(rs2.next()) {
+	            	
+	            	wid = rs2.getInt("wid");
+	            	
+	            }
+	            
+	            ps3 = connection.prepareStatement("INSERT INTO test.combo_test (pid, wid) VALUES (? , ?)");
+	            ps3.setInt(1,pid );
+	            ps3.setInt(2,wid );
+	            ps3.executeUpdate();
+	            
+	            
+	           
+	            
+	            
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            if (connection != null) {
+	                try {
+	                    connection.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	     
+	    //System.out.println("Initial size: " + routes.size());
+	    //System.out.println(pid);
+	    //System.out.println(days);
+		
+	}
+
 }
