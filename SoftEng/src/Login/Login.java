@@ -1,6 +1,6 @@
-package Login;
+package login;
 
-import Prog.Admin; 
+
 
 
 
@@ -21,6 +21,8 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JPasswordField;
 
+import program.Admin;
+
 public class Login extends JFrame {
 
 	/**
@@ -28,7 +30,7 @@ public class Login extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField username_text;
+	private JTextField usernameText;
 	private JPasswordField passwordField;
 
 	/**
@@ -57,7 +59,7 @@ public class Login extends JFrame {
 		//Ksana anoigei to Home otan kleisoume to Login (thelei dispose kai OXI exit)
 		addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e){
-				Home h = new Home();
+				HomeDialog h = new HomeDialog();
 				h.setVisible(true);
 			}
 		});
@@ -68,22 +70,22 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel username_label = new JLabel("Username :");
-		username_label.setBounds(84, 56, 69, 14);
-		contentPane.add(username_label);
+		JLabel usernameLabel = new JLabel("Username :");
+		usernameLabel.setBounds(84, 56, 69, 14);
+		contentPane.add(usernameLabel);
 		
-		JLabel password_label = new JLabel("Password :");
-		password_label.setBounds(84, 91, 69, 14);
-		contentPane.add(password_label);
+		JLabel passwordLabel = new JLabel("Password :");
+		passwordLabel.setBounds(84, 91, 69, 14);
+		contentPane.add(passwordLabel);
 		
-		username_text = new JTextField();
-		username_text.setName("user"); //Set Name to textfield for TESTING
-		username_text.setBounds(171, 53, 105, 20);
-		contentPane.add(username_text);
-		username_text.setColumns(10);
+		usernameText = new JTextField();
+		usernameText.setName("user"); //Set Name to textfield for TESTING
+		usernameText.setBounds(171, 53, 105, 20);
+		contentPane.add(usernameText);
+		usernameText.setColumns(10);
 		
-		JButton login_button = new JButton("Login");
-		login_button.addActionListener(new ActionListener() {
+		JButton loginButton = new JButton("Login");
+		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Login.authenticate(getUsername(), getPassword())) {
                     /*JOptionPane.showMessageDialog(Login.this,
@@ -99,7 +101,7 @@ public class Login extends JFrame {
                             "Login",
                             JOptionPane.ERROR_MESSAGE);
                     // reset username and password
-                    username_text.setText("");
+                    usernameText.setText("");
                     passwordField.setText("");
                   
  
@@ -107,8 +109,8 @@ public class Login extends JFrame {
 				
 			}
 		});
-		login_button.setBounds(168, 131, 89, 23);
-		contentPane.add(login_button);
+		loginButton.setBounds(168, 131, 89, 23);
+		contentPane.add(loginButton);
 		
 		passwordField = new JPasswordField();
 		passwordField.setName("psw");
@@ -124,7 +126,7 @@ public class Login extends JFrame {
 	        	return false;
 	    }
 	  public String getUsername() {
-	        return username_text.getText().trim();
+	        return usernameText.getText().trim();
 	    }
 	  @SuppressWarnings("deprecation")
 	  public String getPassword() {
