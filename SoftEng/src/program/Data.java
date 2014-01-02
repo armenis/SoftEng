@@ -55,13 +55,12 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            }
 	        }
 	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(routes);
+	   
 	    return routes;
 		
 	}
 	//Pernoume apo thn Vash tis Times
-	static final Double getPrice(String perioxh){
+	public static final Double getPrice(String perioxh){
 		 ResultSet rs;
 	     Connection connection = null;
  	     Double price = 0.0;
@@ -101,7 +100,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	    return price;
 	}
 
-	static final Vector getDays(String perioxh){
+	public static final Vector getDays(String perioxh){
 		
 		 Vector days = new Vector();
 		 int pid=0;
@@ -154,19 +153,11 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                }
 	            }
 	        }
-	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(pid);
-	    //System.out.println(days);
-		
-		
-		
-		
-		
+
 		return days;
 	}
 	
-	static final Vector getTimes(String perioxh){
+	public static final Vector getTimes(String perioxh){
 		 Vector times = new Vector();
 		 int pid=0;
 		 ResultSet rs;
@@ -230,7 +221,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 		return times;
 	}
 
-	static final void insertPerioxes(String perioxh){
+	public static final void insertPerioxes(String perioxh){
 		
 		 //ResultSet rs = null;
 	     Connection connection = null;

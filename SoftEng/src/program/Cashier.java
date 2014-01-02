@@ -126,6 +126,7 @@ public static void main(String[] args) {
 		paymentField = new JTextField();
 		paymentField.setBounds(588, 194, 96, 20);
 		contentPane.add(paymentField);
+		paymentField.setName("payment"); //Set Name to textfield for TESTING
 		paymentField.setColumns(10);
 		
 		final JLabel change_label = new JLabel("0,00 \u20AC");
@@ -175,12 +176,14 @@ public static void main(String[] args) {
 		nameText.setHorizontalAlignment(SwingConstants.CENTER);
 		nameText.setBounds(573, 42, 117, 20);
 		contentPane.add(nameText);
+		nameText.setName("name"); //Set Name to textfield for TESTING
 		nameText.setColumns(10);
 		
 		surnameText = new JTextField();
 		surnameText.setHorizontalAlignment(SwingConstants.CENTER);
 		surnameText.setBounds(573, 73, 117, 20);
 		contentPane.add(surnameText);
+		surnameText.setName("surname"); //Set Name to textfield for TESTING
 		surnameText.setColumns(10);
 		
 		JLabel announceLabel = new JLabel("\u0391\u039D\u0391\u039A\u039F\u0399\u039D\u03A9\u03A3\u0395\u0399\u03A3");
