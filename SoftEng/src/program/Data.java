@@ -20,13 +20,13 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	}
 	
 	//Pernoume apo thn Vash tis Perioxes
-	static final Vector getRoutes(){
+	static final Vector<String> getRoutes(){
 		 ResultSet rs;
 	     Connection connection = null;
 	     Statement statement; 
 	     
 	     String query = "SELECT * FROM perioxes ORDER BY пеяиовг";
-	     Vector routes = new Vector();
+	     Vector<String> routes = new Vector<String>();
 
 	     
 	     try {
@@ -78,9 +78,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                price = rs.getDouble("тилг");
 
 	            }
-	            
-	            //statement.close();
-	            //connection.close();
+
 	            
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -93,16 +91,13 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                }
 	            }
 	        }
-	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(price);
-	    
+   
 	    return price;
 	}
-
-	public static final Vector getDays(String perioxh){
+	//Pernoume apo thn Vash tis Meres
+	public static final Vector<String> getDays(String perioxh){
 		
-		 Vector days = new Vector();
+		 Vector<String> days = new Vector<String>();
 		 int pid=0;
 		 ResultSet rs;
 		 ResultSet rs2;
@@ -116,9 +111,6 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            ps = connection.prepareStatement("SELECT pid from test.perioxes WHERE пеяиовг= ? ");
 	            ps.setString(1, perioxh);
 	            rs = ps.executeQuery();
-	            
-	            
-	           
 
 	            while(rs.next()) {
 	            	
@@ -126,9 +118,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                pid = rs.getInt("pid");
 	                
 	            }
-	            
-	            
-	            
+	                 
 	            ps2 = connection.prepareStatement("SELECT глеяес FROM test.meres JOIN test.routes ON meres.mid=routes.mid WHERE pid= ?");
 	            ps2.setInt(1,pid );
 	            rs2 = ps2.executeQuery();
@@ -139,9 +129,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            	
 	            }
 	            
-	            
-	            
-	            
+     
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        } finally {
@@ -156,9 +144,9 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 
 		return days;
 	}
-	
-	public static final Vector getTimes(String perioxh){
-		 Vector times = new Vector();
+	//Pernoume apo thn Vash tis Wres
+	public static final Vector<String> getTimes(String perioxh){
+		 Vector<String> times = new Vector<String>();
 		 int pid=0;
 		 ResultSet rs;
 		 ResultSet rs2;
@@ -172,9 +160,6 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            ps = connection.prepareStatement("SELECT pid from test.perioxes WHERE пеяиовг= ? ");
 	            ps.setString(1, perioxh);
 	            rs = ps.executeQuery();
-	            
-	            
-	           
 
 	            while(rs.next()) {
 	            	
@@ -183,8 +168,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                
 	            }
 	            
-	            
-	            
+  
 	            ps2 = connection.prepareStatement("SELECT ыяес FROM test.wres JOIN test.combo ON wres.wid=combo.wid WHERE pid= ?");
 	            ps2.setInt(1,pid );
 	            rs2 = ps2.executeQuery();
@@ -195,47 +179,6 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            	
 	            }
 	            
-	           
-	            
-	            
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        } finally {
-	            if (connection != null) {
-	                try {
-	                    connection.close();
-	                } catch (SQLException e) {
-	                    e.printStackTrace();
-	                }
-	            }
-	        }
-	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(pid);
-	    //System.out.println(days);
-		
-		
-		
-		
-		
-		return times;
-	}
-
-	public static final void insertPerioxes(String perioxh){
-		
-		 //ResultSet rs = null;
-	     Connection connection = null;
-	     PreparedStatement ps =null;
-
-
-	     try {
-	            connection = JDBCMySQLConnection.getConnection();
-	            
-	            ps = connection.prepareStatement("INSERT INTO test.perioxes_test (пеяиовг) VALUES ( ? )");
-	            ps.setString(1, perioxh);
-	            ps.executeUpdate();
-
-	         
    
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -249,9 +192,36 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            }
 	        }
 	     
-	    
+
+		return times;
+	}
+
+	public static final void insertPerioxes(String perioxh){
 		
 		
+	     Connection connection = null;
+	     PreparedStatement ps =null;
+
+	     try {
+	            connection = JDBCMySQLConnection.getConnection();
+	            
+	            ps = connection.prepareStatement("INSERT INTO test.perioxes (пеяиовг) VALUES ( ? )");
+	            ps.setString(1, perioxh);
+	            ps.executeUpdate();
+
+
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            if (connection != null) {
+	                try {
+	                    connection.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	
 	}
 
 	static final void insertRoutes(String perioxh,String hmera){
@@ -260,7 +230,6 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 		 int mid=0;
 		 ResultSet rs;
 		 ResultSet rs2;
-		 ResultSet rs3;
 	     Connection connection = null;
 	     PreparedStatement ps;
 	     PreparedStatement ps2;
@@ -268,12 +237,9 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	     try {
 	            connection = JDBCMySQLConnection.getConnection();
 	            
-	            ps = connection.prepareStatement("SELECT pid from test.perioxes_test WHERE пеяиовг= ? ");
+	            ps = connection.prepareStatement("SELECT pid from test.perioxes WHERE пеяиовг= ? ");
 	            ps.setString(1, perioxh);
 	            rs = ps.executeQuery();
-	            
-	            
-	           
 
 	            while(rs.next()) {
 	            	
@@ -281,9 +247,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                pid = rs.getInt("pid");
 	                
 	            }
-	            
-	            
-	            
+
 	            ps2 = connection.prepareStatement("SELECT mid from test.meres WHERE глеяес= ? ");
 	            ps2.setString(1,hmera );
 	            rs2 = ps2.executeQuery();
@@ -294,15 +258,12 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            	
 	            }
 	            
-	            ps3 = connection.prepareStatement("INSERT INTO test.routes_test (pid, mid) VALUES (? , ?)");
+	            ps3 = connection.prepareStatement("INSERT INTO test.routes (pid, mid) VALUES (? , ?)");
 	            ps3.setInt(1,pid );
 	            ps3.setInt(2,mid );
 	            ps3.executeUpdate();
 	            
-	            
-	           
-	            
-	            
+ 
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        } finally {
@@ -315,9 +276,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            }
 	        }
 	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(pid);
-	    //System.out.println(days);
+
 	}
 
 	static final void insertTimes(String perioxh,Double price){
@@ -332,7 +291,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	     try {
 	            connection = JDBCMySQLConnection.getConnection();
 	            
-	            ps = connection.prepareStatement("SELECT pid from test.perioxes_test WHERE пеяиовг= ? ");
+	            ps = connection.prepareStatement("SELECT pid from test.perioxes WHERE пеяиовг= ? ");
 	            ps.setString(1, perioxh);
 	            rs = ps.executeQuery();
 
@@ -343,7 +302,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                
 	            }
 
-	            ps2 = connection.prepareStatement("INSERT INTO test.times_test (тилг, pid) VALUES (? , ?) ");
+	            ps2 = connection.prepareStatement("INSERT INTO test.times (тилг, pid) VALUES (? , ?) ");
 	            ps2.setDouble(1, price);
 	            ps2.setInt(2,pid);
 	            ps2.executeUpdate();
@@ -362,9 +321,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            }
 	        }
 	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(pid);
-	    //System.out.println(days);
+	 
 	}
 	
 	static final void insertWres(String perioxh,String wra){
@@ -372,7 +329,6 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 		 int wid=0;
 		 ResultSet rs;
 		 ResultSet rs2;
-		 ResultSet rs3;
 	     Connection connection = null;
 	     PreparedStatement ps;
 	     PreparedStatement ps2;
@@ -380,12 +336,9 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	     try {
 	            connection = JDBCMySQLConnection.getConnection();
 	            
-	            ps = connection.prepareStatement("SELECT pid from test.perioxes_test WHERE пеяиовг= ? ");
+	            ps = connection.prepareStatement("SELECT pid from test.perioxes WHERE пеяиовг= ? ");
 	            ps.setString(1, perioxh);
 	            rs = ps.executeQuery();
-	            
-	            
-	           
 
 	            while(rs.next()) {
 	            	
@@ -393,9 +346,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                pid = rs.getInt("pid");
 	                
 	            }
-	            
-	            
-	            
+
 	            ps2 = connection.prepareStatement("SELECT wid from test.wres WHERE ыяес= ? ");
 	            ps2.setString(1,wra );
 	            rs2 = ps2.executeQuery();
@@ -406,14 +357,11 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	            	
 	            }
 	            
-	            ps3 = connection.prepareStatement("INSERT INTO test.combo_test (pid, wid) VALUES (? , ?)");
+	            ps3 = connection.prepareStatement("INSERT INTO test.combo (pid, wid) VALUES (? , ?)");
 	            ps3.setInt(1,pid );
 	            ps3.setInt(2,wid );
 	            ps3.executeUpdate();
-	            
-	            
-	           
-	            
+
 	            
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -426,11 +374,7 @@ public class Data { // NOPMD by Stam on 12/31/13 7:49 PM
 	                }
 	            }
 	        }
-	     
-	    //System.out.println("Initial size: " + routes.size());
-	    //System.out.println(pid);
-	    //System.out.println(days);
-		
+	
 	}
 
 }

@@ -51,9 +51,9 @@ public class Print extends JFrame {
 		
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 367, 216);
+		setBounds(100, 100, 365, 231);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -79,13 +79,13 @@ public class Print extends JFrame {
 		JLabel timeLabel = new JLabel("\u03A9\u03A1\u0391 :");
 		timeLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		timeLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		timeLabel.setBounds(10, 86, 120, 14);
+		timeLabel.setBounds(10, 111, 120, 14);
 		contentPane.add(timeLabel);
 		
 		JLabel priceLabel = new JLabel("\u03A4\u0399\u039C\u0397 :");
 		priceLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		priceLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-		priceLabel.setBounds(10, 111, 120, 14);
+		priceLabel.setBounds(10, 134, 120, 14);
 		contentPane.add(priceLabel);
 		
 		/*------------------------------------------------------------*/
@@ -117,14 +117,14 @@ public class Print extends JFrame {
 		
 		JLabel time = new JLabel("");
 		time.setHorizontalAlignment(SwingConstants.CENTER);
-		time.setBounds(140, 88, 120, 14);
+		time.setBounds(140, 111, 120, 14);
 		contentPane.add(time);
 		
 				time.setText(Cashier.prTime);
 		
 		JLabel price = new JLabel("");
 		price.setHorizontalAlignment(SwingConstants.CENTER);
-		price.setBounds(140, 113, 120, 14);
+		price.setBounds(140, 136, 120, 14);
 		contentPane.add(price);
 				
 				price.setText(Cashier.prPrice + " €");
@@ -139,11 +139,20 @@ public class Print extends JFrame {
 				
 			}
 		});
-		print.setBounds(221, 144, 120, 23);
+		print.setBounds(219, 159, 120, 23);
 		contentPane.add(print);
 		
-
+		JLabel lblNewLabel = new JLabel("\u0397\u039C\u0395\u03A1\u0391 :");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setBounds(70, 86, 60, 14);
+		contentPane.add(lblNewLabel);
 		
+		JLabel day = new JLabel((String) null);
+		day.setHorizontalAlignment(SwingConstants.CENTER);
+		day.setBounds(140, 88, 120, 14);
+		contentPane.add(day);
 		
+			day.setText(Cashier.prDay);
+	
 	}
 }

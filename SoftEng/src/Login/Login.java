@@ -54,7 +54,6 @@ public class Login extends JFrame {
 	 */
 	public Login() {
 		setTitle("Administrator Login");
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		//Ksana anoigei to Home otan kleisoume to Login (thelei dispose kai OXI exit)
 		addWindowListener(new WindowAdapter(){
@@ -88,10 +87,6 @@ public class Login extends JFrame {
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Login.authenticate(getUsername(), getPassword())) {
-                    /*JOptionPane.showMessageDialog(Login.this,
-                            "Hi " + getUsername() + "! You have successfully logged in.",
-                            "Login",
-                            JOptionPane.INFORMATION_MESSAGE);*/
                     Admin frame = new Admin();
                     frame.setVisible(true);
                     dispose();                
@@ -130,7 +125,7 @@ public class Login extends JFrame {
 	    }
 	  @SuppressWarnings("deprecation")
 	  public String getPassword() {
-	        //return new String(password_text.getText());
+	        
 		  	return new String(passwordField.getText());
 	    }
 

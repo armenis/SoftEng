@@ -4,13 +4,10 @@ import static org.junit.Assert.*;
 
 import java.util.Vector;
 
-import login.Login;
-
 import org.junit.Test;
 
-import program.Admin;
 import program.Data;
-import program.Print;
+
 
 
 public class DataTest {
@@ -28,7 +25,7 @@ public class DataTest {
 	@Test
 	public void testGetDays(){
 		String perioxh = "калиа";
-		Vector days = new Vector();
+		Vector<String> days = new Vector<String>();
 		days.addElement("деутеяа");
 		days.addElement("пелптг");
 		assertEquals(days,Data.getDays(perioxh));
@@ -44,7 +41,7 @@ public class DataTest {
 	@Test
 	public void testGetTimes(){
 		String perioxh = "калиа";
-		Vector times = new Vector();
+		Vector<String> times = new Vector<String>();
 		times.addElement("9:00");
 		times.addElement("11:00");
 		times.addElement("13:00");

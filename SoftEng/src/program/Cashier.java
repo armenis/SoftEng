@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 
 
+
+
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JList;
@@ -40,6 +43,7 @@ public class Cashier extends JFrame {
 	public static String prPrice; //Price for Print
 	public static String prTime;
 	public static String prDest;
+	public static String prDay;
 	public static String name; //Name for Print	
 	public static String sur;  //Surname for Print
 
@@ -66,7 +70,6 @@ public static void main(String[] args) {
 	 */
 	public Cashier() {
 		setTitle("\u0391\u0393\u039F\u03A1\u0391 \u0395\u0399\u03A3\u0397\u03A4\u0397\u03A1\u0399\u039F\u03A5");
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		//Ksana anoigei to Home otan kleisoume to Cashier (thelei dispose kai OXI exit)
 		addWindowListener(new WindowAdapter(){
@@ -101,7 +104,7 @@ public static void main(String[] args) {
 		contentPane.add(daysLabel);
 		
 		
-		final JList<Object> routes_list = new JList<Object>(data.getRoutes());
+		final JList<Object> routes_list = new JList<Object>(Data.getRoutes());
 		routes_list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		routes_list.setBounds(10, 42, 143, 211);
 		contentPane.add(routes_list);
@@ -113,7 +116,7 @@ public static void main(String[] args) {
 		contentPane.add(days_list);
 		
 		
-		final JList<Double> time_list = new JList<Double>();
+		final JList<Object> time_list = new JList<Object>();
 		time_list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		time_list.setBounds(285, 42, 112, 211);
 		contentPane.add(time_list);
@@ -139,7 +142,6 @@ public static void main(String[] args) {
 		changeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//int index = price_list.getSelectedIndex(); 
 				double price = Double.parseDouble(Cashier.prPrice);
 				double change = data.calculateChange(getPayment(), price);
 				change_label.setText(String.valueOf(change) + " €");
@@ -151,11 +153,12 @@ public static void main(String[] args) {
 		JButton printButton = new JButton("\u0395\u039A\u03A4\u03A5\u03A0\u03A9\u03A3\u0397");
 		printButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Cashier.pr_price = String.valueOf((double) price_list.getSelectedValue());
+			
 				Cashier.prDest = (String) routes_list.getSelectedValue();
 				Cashier.prTime = String.valueOf(time_list.getSelectedValue());
 				Cashier.name = getClientName();
 				Cashier.sur = getClientSurname();
+				Cashier.prDay = (String) days_list.getSelectedValue();
 				Print pr = new Print();
 				pr.setVisible(true);
 				
@@ -214,12 +217,12 @@ public static void main(String[] args) {
 				
 				String route = (String) routes_list.getSelectedValue();
 				//Pernoume thn timh tou eishthriou me bash thn Perioxh pou epileksame
-				String tp = String.valueOf(data.getPrice(route));
+				String tp = String.valueOf(Data.getPrice(route));
 				Cashier.prPrice = tp;
 				ticket_price.setText(tp + " €");
 				
-				days_list.setListData(data.getDays(route));
-				time_list.setListData(data.getTimes(route));
+				days_list.setListData(Data.getDays(route));
+				time_list.setListData(Data.getTimes(route));
 				
 
 			}

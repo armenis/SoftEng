@@ -5,11 +5,7 @@ import javax.swing.JTextField;
 
 import junit.framework.TestCase;
 import login.*;
-import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-import program.*;
 
 public class LoginTest extends TestCase {
 	

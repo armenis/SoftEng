@@ -60,7 +60,6 @@ public class Admin extends JFrame {
 	 */
 	public Admin() {
 		setTitle("\u0394\u0399\u0391\u03A7\u0395\u0399\u03A1\u0399\u03A3\u03A4\u0397\u03A3");
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		//Ksana anoigei to Home otan kleisoume to Admin (thelei dispose kai OXI exit)
 		addWindowListener(new WindowAdapter(){

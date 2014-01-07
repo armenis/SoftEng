@@ -6,15 +6,11 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.border.TitledBorder;
-
 import program.Cashier;
-
 import java.awt.Color;
 
 public class HomeDialog extends JDialog {
@@ -43,7 +39,7 @@ public class HomeDialog extends JDialog {
 	public HomeDialog() {
 		setBackground(Color.WHITE);
 		setTitle("Home");
-		setBounds(100, 100, 344, 158);
+		setBounds(100, 100, 337, 154);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.WHITE);
 		contentPanel.setForeground(Color.BLACK);
