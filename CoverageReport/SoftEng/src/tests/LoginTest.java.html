@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LoginTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">tests</a> &gt; <span class="el_source">LoginTest.java</span></div><h1>LoginTest.java</h1><pre class="source lang-java linenums">package tests;
+
+
+import javax.swing.JTextField;
+
+import junit.framework.TestCase;
+import login.*;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import program.*;
+
+<span class="fc" id="L14">public class LoginTest extends TestCase {</span>
+	
+	//Testarei to JTextField gia to Username !!
+<span class="fc" id="L17">	Login log = new Login();</span>
+	@Test
+	public void testUsernameTextfield() throws Exception {
+<span class="fc" id="L20">		String testString = &quot;admin&quot;;</span>
+  
+<span class="fc" id="L22">		assertNotNull(log);  // Instantiated?</span>
+
+<span class="fc" id="L24">		JTextField input = (JTextField)TestUtils.getChildNamed(log, &quot;user&quot;);</span>
+<span class="fc" id="L25">		assertNotNull(input); // Component found?</span>
+   
+<span class="fc" id="L27">		input.setText(testString);</span>
+<span class="fc" id="L28">		input.postActionEvent();  // Type in a test message + ENTER</span>
+
+<span class="fc" id="L30">		assertEquals(testString, input.getText());</span>
+<span class="fc" id="L31">    }</span>
+	
+	//Testarei to JTextField gia to Password !!
+	@Test
+	public void testPswTextField() throws Exception {
+<span class="fc" id="L36">		String testString = &quot;1234&quot;;</span>
+  
+<span class="fc" id="L38">		assertNotNull(log);  // Instantiated?</span>
+
+<span class="fc" id="L40">		JTextField input = (JTextField)TestUtils.getChildNamed(log, &quot;psw&quot;);</span>
+<span class="fc" id="L41">		assertNotNull(input); // Component found?</span>
+   
+<span class="fc" id="L43">		input.setText(testString);</span>
+<span class="fc" id="L44">		input.postActionEvent();  // Type in a test message + ENTER</span>
+
+<span class="fc" id="L46">		assertEquals(testString, input.getText());</span>
+<span class="fc" id="L47">    }</span>
+	
+	//Testaroume thn Authenticate() ths Login
+
+	@Test
+	public void testAuthnticate() {
+
+<span class="fc" id="L54">		String testuser = &quot;admin&quot;;</span>
+<span class="fc" id="L55">		String testpsw = &quot;1234&quot;;</span>
+<span class="fc" id="L56">		JTextField user = (JTextField)TestUtils.getChildNamed(log, &quot;user&quot;);</span>
+<span class="fc" id="L57">		JTextField psw = (JTextField)TestUtils.getChildNamed(log, &quot;psw&quot;);</span>
+<span class="fc" id="L58">		assertNotNull(user); // Component found?</span>
+<span class="fc" id="L59">		assertNotNull(psw); // Component found?</span>
+<span class="fc" id="L60">		user.setText(testuser);</span>
+<span class="fc" id="L61">		psw.setText(testpsw);</span>
+<span class="fc" id="L62">		user.postActionEvent();</span>
+<span class="fc" id="L63">		psw.postActionEvent();</span>
+
+<span class="fc" id="L65">		assertTrue(&quot;Login Data are Correct !!&quot;,Login.authenticate(user.getText(), psw.getText()));</span>
+<span class="fc" id="L66">	}</span>
+	
+	
+	@Test
+	public void testGetUsername(){
+<span class="fc" id="L71">		String testuser = &quot;admin&quot;;</span>
+<span class="fc" id="L72">		JTextField user = (JTextField)TestUtils.getChildNamed(log, &quot;user&quot;);</span>
+<span class="fc" id="L73">		assertNotNull(user); // Component found?</span>
+<span class="fc" id="L74">		user.setText(testuser);</span>
+<span class="fc" id="L75">		user.postActionEvent();</span>
+		
+<span class="fc" id="L77">		assertEquals(&quot;admin&quot;,log.getUsername());</span>
+<span class="fc" id="L78">	}</span>
+	
+	@Test
+	public void testGetPassword(){
+<span class="fc" id="L82">		String testpsw = &quot;1234&quot;;</span>
+<span class="fc" id="L83">		JTextField psw = (JTextField)TestUtils.getChildNamed(log, &quot;psw&quot;);</span>
+<span class="fc" id="L84">		assertNotNull(psw); // Component found?</span>
+<span class="fc" id="L85">		psw.setText(testpsw);</span>
+<span class="fc" id="L86">		psw.postActionEvent();</span>
+		
+<span class="fc" id="L88">		assertEquals(&quot;1234&quot;,log.getPassword());</span>
+<span class="fc" id="L89">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>HomeDialog.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">login</a> &gt; <span class="el_source">HomeDialog.java</span></div><h1>HomeDialog.java</h1><pre class="source lang-java linenums"><span class="fc" id="L1">package login;</span>
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.border.TitledBorder;
+
+import program.Cashier;
+
+import java.awt.Color;
+
+public class HomeDialog extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="fc" id="L26">	private final JPanel contentPanel = new JPanel();</span>
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+<span class="fc" id="L33">			HomeDialog dialog = new HomeDialog();</span>
+<span class="fc" id="L34">			dialog.setVisible(true);</span>
+<span class="pc" id="L35">		} catch (Exception e) {</span>
+<span class="nc" id="L36">			e.printStackTrace();</span>
+		}
+<span class="fc" id="L38">	}</span>
+
+	/**
+	 * Create the dialog.
+	 */
+<span class="fc" id="L43">	public HomeDialog() {</span>
+<span class="fc" id="L44">		setBackground(Color.WHITE);</span>
+<span class="fc" id="L45">		setTitle(&quot;Home&quot;);</span>
+<span class="fc" id="L46">		setBounds(100, 100, 344, 158);</span>
+<span class="fc" id="L47">		getContentPane().setLayout(new BorderLayout());</span>
+<span class="fc" id="L48">		contentPanel.setBackground(Color.WHITE);</span>
+<span class="fc" id="L49">		contentPanel.setForeground(Color.BLACK);</span>
+<span class="fc" id="L50">		contentPanel.setBorder(new TitledBorder(null, &quot;&quot;, TitledBorder.LEADING, TitledBorder.TOP, null, null));</span>
+<span class="fc" id="L51">		getContentPane().add(contentPanel, BorderLayout.CENTER);</span>
+<span class="fc" id="L52">		contentPanel.setLayout(null);</span>
+		
+<span class="fc" id="L54">		JLabel adminLabel = new JLabel(&quot;\u0394\u03B9\u03B1\u03C7\u03B5\u03B9\u03C1\u03B9\u03C3\u03C4\u03AE\u03C2 :&quot;);</span>
+<span class="fc" id="L55">		adminLabel.setFont(new Font(&quot;Tahoma&quot;, Font.BOLD, 13));</span>
+<span class="fc" id="L56">		adminLabel.setBounds(57, 30, 89, 21);</span>
+<span class="fc" id="L57">		contentPanel.add(adminLabel);</span>
+		
+<span class="fc" id="L59">		JLabel cashierLabel = new JLabel(&quot;\u03A4\u03B1\u03BC\u03AF\u03B1\u03C2 :&quot;);</span>
+<span class="fc" id="L60">		cashierLabel.setFont(new Font(&quot;Tahoma&quot;, Font.BOLD, 13));</span>
+<span class="fc" id="L61">		cashierLabel.setBounds(90, 71, 56, 14);</span>
+<span class="fc" id="L62">		contentPanel.add(cashierLabel);</span>
+		
+<span class="fc" id="L64">		JButton loginButton = new JButton(&quot;Login&quot;);</span>
+<span class="fc" id="L65">		loginButton.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L67">				Login log = new Login();</span>
+<span class="nc" id="L68">				log.setVisible(true);</span>
+<span class="nc" id="L69">				dispose();</span>
+<span class="nc" id="L70">			}</span>
+		});
+<span class="fc" id="L72">		loginButton.setBounds(156, 30, 89, 23);</span>
+<span class="fc" id="L73">		contentPanel.add(loginButton);</span>
+		
+<span class="fc" id="L75">		JButton enterButton = new JButton(&quot;Enter&quot;);</span>
+<span class="fc" id="L76">		enterButton.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L78">				Cashier tamias = new Cashier();</span>
+<span class="nc" id="L79">				tamias.setVisible(true);</span>
+<span class="nc" id="L80">				dispose();</span>
+				
+<span class="nc" id="L82">			}</span>
+		});
+<span class="fc" id="L84">		enterButton.setBounds(156, 68, 89, 23);</span>
+<span class="fc" id="L85">		contentPanel.add(enterButton);</span>
+
+<span class="fc" id="L87">	}</span>
+	
+	
+}
+ 
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TestUtils.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">tests</a> &gt; <span class="el_source">TestUtils.java</span></div><h1>TestUtils.java</h1><pre class="source lang-java linenums">package tests;
+
+import java.awt.Component;
+import java.awt.Container;
+
+<span class="nc" id="L6">public class TestUtils {</span>
+	public static Component getChildNamed(Component parent, String name) {
+		   
+// Debug line
+//System.out.println(&quot;Class: &quot; + parent.getClass() +&quot; Name: &quot; + parent.getName());
+
+<span class="fc bfc" id="L12" title="All 2 branches covered.">		  if (name.equals(parent.getName())) { return parent; }</span>
+<span class="pc bpc" id="L13" title="1 of 2 branches missed.">	         if (parent instanceof Container) {</span>
+<span class="fc" id="L14">		            Component[] children = ((Container)parent).getComponents();</span>
+		   
+<span class="fc bfc" id="L16" title="All 2 branches covered.">		            for (int i = 0; i &lt; children.length; ++i) {</span>
+<span class="fc" id="L17">		               Component child = getChildNamed(children[i], name);</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">		               if (child != null) { return child; }</span>
+		            }
+		         }
+		         
+<span class="fc" id="L22">		         return null;</span>
+		      }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>

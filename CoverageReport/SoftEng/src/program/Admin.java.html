@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Admin.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">program</a> &gt; <span class="el_source">Admin.java</span></div><h1>Admin.java</h1><pre class="source lang-java linenums"><span class="fc" id="L1">package program;</span>
+
+
+
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+
+import login.*;
+
+
+public class Admin extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField dest;
+	private JTextField day;
+	private JTextField time;
+	private JTextField price;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="fc" id="L46">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="fc" id="L49">					Admin frame = new Admin();</span>
+<span class="fc" id="L50">					frame.setVisible(true);</span>
+<span class="pc" id="L51">				} catch (Exception e) {</span>
+<span class="nc" id="L52">					e.printStackTrace();</span>
+				}
+<span class="fc" id="L54">			}</span>
+		});
+<span class="fc" id="L56">	}</span>
+
+	/**
+	 * Create the frame.
+	 */
+<span class="fc" id="L61">	public Admin() {</span>
+<span class="fc" id="L62">		setTitle(&quot;\u0394\u0399\u0391\u03A7\u0395\u0399\u03A1\u0399\u03A3\u03A4\u0397\u03A3&quot;);</span>
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+<span class="fc" id="L64">		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);</span>
+		//Ksana anoigei to Home otan kleisoume to Admin (thelei dispose kai OXI exit)
+<span class="fc" id="L66">		addWindowListener(new WindowAdapter(){</span>
+			public void windowClosing(WindowEvent e){
+<span class="nc" id="L68">				HomeDialog h = new HomeDialog();</span>
+<span class="nc" id="L69">				h.setVisible(true);</span>
+<span class="nc" id="L70">			}</span>
+		});
+		
+		
+<span class="fc" id="L74">		setBounds(100, 100, 397, 476);</span>
+<span class="fc" id="L75">		contentPane = new JPanel();</span>
+<span class="fc" id="L76">		contentPane.setBackground(Color.LIGHT_GRAY);</span>
+<span class="fc" id="L77">		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));</span>
+<span class="fc" id="L78">		setContentPane(contentPane);</span>
+<span class="fc" id="L79">		contentPane.setLayout(null);</span>
+		
+<span class="fc" id="L81">		final JTextArea textArea = new JTextArea();</span>
+<span class="fc" id="L82">		textArea.setBounds(10, 288, 361, 96);</span>
+<span class="fc" id="L83">		contentPane.add(textArea);</span>
+		
+<span class="fc" id="L85">		JButton publish = new JButton(&quot;\u0394\u0397\u039C\u039F\u03A3\u0399\u0395\u03A5\u03A3\u0397&quot;);</span>
+<span class="fc" id="L86">		publish.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				
+<span class="nc" id="L89">				String anak = textArea.getText();</span>
+<span class="nc" id="L90">				Announce an = new Announce();</span>
+<span class="nc" id="L91">				an.writeFile(anak);</span>
+				
+<span class="nc" id="L93">			}</span>
+		});
+<span class="fc" id="L95">		publish.setBounds(232, 395, 129, 28);</span>
+<span class="fc" id="L96">		contentPane.add(publish);</span>
+		
+<span class="fc" id="L98">		JLabel anak = new JLabel(&quot;\u0391\u039D\u0391\u039A\u039F\u0399\u039D\u03A9\u03A3\u0395\u0399\u03A3&quot;);</span>
+<span class="fc" id="L99">		anak.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="fc" id="L100">		anak.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 23));</span>
+<span class="fc" id="L101">		anak.setBounds(106, 249, 177, 28);</span>
+<span class="fc" id="L102">		contentPane.add(anak);</span>
+		
+<span class="fc" id="L104">		JLabel label1 = new JLabel(&quot;\u03A0\u03A1\u039F\u039F\u03A1\u0399\u03A3\u039C\u039F\u03A3&quot;);</span>
+<span class="fc" id="L105">		label1.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="fc" id="L106">		label1.setBounds(66, 61, 86, 14);</span>
+<span class="fc" id="L107">		contentPane.add(label1);</span>
+		
+<span class="fc" id="L109">		dest = new JTextField();</span>
+<span class="fc" id="L110">		dest.setBounds(66, 83, 86, 20);</span>
+<span class="fc" id="L111">		contentPane.add(dest);</span>
+<span class="fc" id="L112">		dest.setColumns(10);</span>
+		
+<span class="fc" id="L114">		day = new JTextField();</span>
+<span class="fc" id="L115">		day.setBounds(256, 83, 86, 20);</span>
+<span class="fc" id="L116">		contentPane.add(day);</span>
+<span class="fc" id="L117">		day.setColumns(10);</span>
+		
+<span class="fc" id="L119">		time = new JTextField();</span>
+<span class="fc" id="L120">		time.setBounds(256, 128, 86, 20);</span>
+<span class="fc" id="L121">		contentPane.add(time);</span>
+<span class="fc" id="L122">		time.setColumns(10);</span>
+		
+<span class="fc" id="L124">		price = new JTextField();</span>
+<span class="fc" id="L125">		price.setBounds(256, 172, 86, 20);</span>
+<span class="fc" id="L126">		contentPane.add(price);</span>
+<span class="fc" id="L127">		price.setColumns(10);</span>
+		
+<span class="fc" id="L129">		JLabel label2 = new JLabel(&quot;\u0397\u039C\u0395\u03A1\u0391&quot;);</span>
+<span class="fc" id="L130">		label2.setBounds(283, 61, 62, 14);</span>
+<span class="fc" id="L131">		contentPane.add(label2);</span>
+		
+<span class="fc" id="L133">		JLabel label3 = new JLabel(&quot;\u03A9\u03A1\u0391&quot;);</span>
+<span class="fc" id="L134">		label3.setBounds(283, 114, 46, 14);</span>
+<span class="fc" id="L135">		contentPane.add(label3);</span>
+		
+<span class="fc" id="L137">		JLabel label4 = new JLabel(&quot;\u03A4\u0399\u039C\u0397&quot;);</span>
+<span class="fc" id="L138">		label4.setBounds(280, 159, 46, 14);</span>
+<span class="fc" id="L139">		contentPane.add(label4);</span>
+		
+<span class="fc" id="L141">		JLabel label = new JLabel(&quot;\u0395\u0399\u03A3\u0391\u0393\u03A9\u0393\u0397 \u039D\u0395\u03A9\u039D \u0394\u03A1\u039F\u039C\u039F\u039B\u039F\u0393\u0399\u03A9\u039D&quot;);</span>
+<span class="fc" id="L142">		label.setFont(new Font(&quot;Tahoma&quot;, Font.BOLD, 14));</span>
+<span class="fc" id="L143">		label.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="fc" id="L144">		label.setBounds(43, 11, 286, 14);</span>
+<span class="fc" id="L145">		contentPane.add(label);</span>
+		
+		
+		
+		
+		
+<span class="fc" id="L151">		final JButton insertCombo = new JButton(&quot;\u039A\u0391\u03A4\u0391\u03A7\u03A9\u03A1\u0397\u03A3\u0397&quot;);</span>
+<span class="fc" id="L152">		insertCombo.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				
+<span class="nc" id="L155">				Data.insertRoutes(dest.getText(), day.getText());</span>
+<span class="nc" id="L156">				Data.insertTimes(dest.getText(),Double.parseDouble(price.getText()));</span>
+<span class="nc" id="L157">				Data.insertWres(dest.getText(),time.getText());</span>
+				
+<span class="nc" id="L159">			}</span>
+		});
+<span class="fc" id="L161">		insertCombo.setBounds(237, 203, 124, 23);</span>
+<span class="fc" id="L162">		contentPane.add(insertCombo);</span>
+		
+<span class="fc" id="L164">		final JButton insertDest = new JButton(&quot;\u0395\u0399\u03A3\u0391\u0393\u03A9\u0393\u0397&quot;);</span>
+<span class="fc" id="L165">		insertDest.setBackground(Color.RED);</span>
+<span class="fc" id="L166">		insertDest.setForeground(Color.BLACK);</span>
+<span class="fc" id="L167">		insertDest.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+<span class="nc" id="L171">				Data.insertPerioxes(dest.getText());</span>
+	
+<span class="nc" id="L173">			}</span>
+		});
+<span class="fc" id="L175">		insertDest.setBounds(46, 114, 124, 23);</span>
+<span class="fc" id="L176">		contentPane.add(insertDest);</span>
+		
+<span class="fc" id="L178">		JLabel label5 = new JLabel(&quot;\u03A0\u03A1\u03A9\u03A4\u0391 \u0395\u0399\u03A3\u0391\u0393\u0395\u03A4\u0391\u0399 \u03A4\u039F\u039D \u03A0\u03A1\u039F\u039F\u03A1\u0399\u03A3\u039C\u039F !!!&quot;);</span>
+<span class="fc" id="L179">		label5.setForeground(Color.RED);</span>
+<span class="fc" id="L180">		label5.setBounds(10, 148, 229, 14);</span>
+<span class="fc" id="L181">		contentPane.add(label5);</span>
+	
+<span class="fc" id="L183">	}</span>
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>

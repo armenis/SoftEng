@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Cashier.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">program</a> &gt; <span class="el_source">Cashier.java</span></div><h1>Cashier.java</h1><pre class="source lang-java linenums"><span class="fc" id="L1">package program;</span>
+
+import java.awt.EventQueue;
+
+
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JList;
+import javax.swing.JLabel;
+
+import java.awt.Color;
+
+import javax.swing.border.BevelBorder;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+
+import login.*;
+
+public class Cashier extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField paymentField;
+	private JTextField nameText;
+	private JTextField surnameText;
+	public static String prPrice; //Price for Print
+	public static String prTime;
+	public static String prDest;
+	public static String name; //Name for Print	
+	public static String sur;  //Surname for Print
+
+	
+	
+	/**
+	 * Launch the application.
+	 */
+public static void main(String[] args) {
+<span class="fc" id="L52">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="fc" id="L55">					Cashier frame = new Cashier();</span>
+<span class="fc" id="L56">					frame.setVisible(true);</span>
+<span class="pc" id="L57">				} catch (Exception e) {</span>
+<span class="nc" id="L58">					e.printStackTrace();</span>
+				}
+<span class="fc" id="L60">			}</span>
+		});
+<span class="fc" id="L62">	}</span>
+
+	/**
+	 * Create the frame. 
+	 */
+<span class="fc" id="L67">	public Cashier() {</span>
+<span class="fc" id="L68">		setTitle(&quot;\u0391\u0393\u039F\u03A1\u0391 \u0395\u0399\u03A3\u0397\u03A4\u0397\u03A1\u0399\u039F\u03A5&quot;);</span>
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+<span class="fc" id="L70">		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);</span>
+		//Ksana anoigei to Home otan kleisoume to Cashier (thelei dispose kai OXI exit)
+<span class="fc" id="L72">		addWindowListener(new WindowAdapter(){</span>
+			public void windowClosing(WindowEvent e){
+<span class="nc" id="L74">				HomeDialog h = new HomeDialog();</span>
+<span class="nc" id="L75">				h.setVisible(true);</span>
+<span class="nc" id="L76">			}</span>
+		});
+		
+<span class="fc" id="L79">		final Data data = new Data();</span>
+		
+		
+<span class="fc" id="L82">		setBounds(100, 100, 738, 515);</span>
+<span class="fc" id="L83">		contentPane = new JPanel();</span>
+<span class="fc" id="L84">		contentPane.setBackground(Color.LIGHT_GRAY);</span>
+<span class="fc" id="L85">		setContentPane(contentPane);</span>
+<span class="fc" id="L86">		contentPane.setLayout(null);</span>
+		
+<span class="fc" id="L88">		JLabel routesLabel = new JLabel(&quot;\u0394\u03A1\u039F\u039C\u039F\u039B\u039F\u0393\u0399\u0391&quot;);</span>
+<span class="fc" id="L89">		routesLabel.setFont(routesLabel.getFont().deriveFont(routesLabel.getFont().getStyle() | Font.BOLD));</span>
+<span class="fc" id="L90">		routesLabel.setBounds(43, 23, 138, 20);</span>
+<span class="fc" id="L91">		contentPane.add(routesLabel);</span>
+		
+<span class="fc" id="L93">		JLabel timeLabel = new JLabel(&quot;\u03A9\u03A1\u0395\u03A3&quot;);</span>
+<span class="fc" id="L94">		timeLabel.setFont(timeLabel.getFont().deriveFont(timeLabel.getFont().getStyle() | Font.BOLD));</span>
+<span class="fc" id="L95">		timeLabel.setBounds(326, 26, 46, 14);</span>
+<span class="fc" id="L96">		contentPane.add(timeLabel);</span>
+		
+<span class="fc" id="L98">		JLabel daysLabel = new JLabel(&quot;\u0397\u039C\u0395\u03A1\u0395\u03A3&quot;);</span>
+<span class="fc" id="L99">		daysLabel.setFont(daysLabel.getFont().deriveFont(daysLabel.getFont().getStyle() | Font.BOLD));</span>
+<span class="fc" id="L100">		daysLabel.setBounds(201, 26, 57, 14);</span>
+<span class="fc" id="L101">		contentPane.add(daysLabel);</span>
+		
+		
+<span class="fc" id="L104">		final JList&lt;Object&gt; routes_list = new JList&lt;Object&gt;(data.getRoutes());</span>
+<span class="fc" id="L105">		routes_list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));</span>
+<span class="fc" id="L106">		routes_list.setBounds(10, 42, 143, 211);</span>
+<span class="fc" id="L107">		contentPane.add(routes_list);</span>
+		
+
+<span class="fc" id="L110">		final JList&lt;Object&gt; days_list = new JList&lt;Object&gt;();</span>
+<span class="fc" id="L111">		days_list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));</span>
+<span class="fc" id="L112">		days_list.setBounds(163, 42, 112, 211);</span>
+<span class="fc" id="L113">		contentPane.add(days_list);</span>
+		
+		
+<span class="fc" id="L116">		final JList&lt;Double&gt; time_list = new JList&lt;Double&gt;();</span>
+<span class="fc" id="L117">		time_list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));</span>
+<span class="fc" id="L118">		time_list.setBounds(285, 42, 112, 211);</span>
+<span class="fc" id="L119">		contentPane.add(time_list);</span>
+		
+<span class="fc" id="L121">		JLabel paymentLabel = new JLabel(&quot;\u03A0\u039B\u0397\u03A1\u03A9\u039C\u0397&quot;);</span>
+<span class="fc" id="L122">		paymentLabel.setFont(paymentLabel.getFont().deriveFont(paymentLabel.getFont().getStyle() | Font.BOLD));</span>
+<span class="fc" id="L123">		paymentLabel.setBounds(605, 177, 66, 14);</span>
+<span class="fc" id="L124">		contentPane.add(paymentLabel);</span>
+		
+<span class="fc" id="L126">		paymentField = new JTextField();</span>
+<span class="fc" id="L127">		paymentField.setBounds(588, 194, 96, 20);</span>
+<span class="fc" id="L128">		contentPane.add(paymentField);</span>
+<span class="fc" id="L129">		paymentField.setName(&quot;payment&quot;); //Set Name to textfield for TESTING</span>
+<span class="fc" id="L130">		paymentField.setColumns(10);</span>
+		
+<span class="fc" id="L132">		final JLabel change_label = new JLabel(&quot;0,00 \u20AC&quot;);</span>
+<span class="fc" id="L133">		change_label.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L134">		change_label.setBounds(614, 243, 57, 20);</span>
+<span class="fc" id="L135">		contentPane.add(change_label);</span>
+		
+		
+<span class="fc" id="L138">		JButton changeButton = new JButton(&quot;\u03A1\u0395\u03A3\u03A4\u0391&quot;);</span>
+<span class="fc" id="L139">		changeButton.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+				
+				//int index = price_list.getSelectedIndex(); 
+<span class="nc" id="L143">				double price = Double.parseDouble(Cashier.prPrice);</span>
+<span class="nc" id="L144">				double change = data.calculateChange(getPayment(), price);</span>
+<span class="nc" id="L145">				change_label.setText(String.valueOf(change) + &quot; €&quot;);</span>
+				 
+<span class="nc" id="L147">			}</span>
+		});
+		
+
+<span class="fc" id="L151">		JButton printButton = new JButton(&quot;\u0395\u039A\u03A4\u03A5\u03A0\u03A9\u03A3\u0397&quot;);</span>
+<span class="fc" id="L152">		printButton.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+				//Cashier.pr_price = String.valueOf((double) price_list.getSelectedValue());
+<span class="nc" id="L155">				Cashier.prDest = (String) routes_list.getSelectedValue();</span>
+<span class="nc" id="L156">				Cashier.prTime = String.valueOf(time_list.getSelectedValue());</span>
+<span class="nc" id="L157">				Cashier.name = getClientName();</span>
+<span class="nc" id="L158">				Cashier.sur = getClientSurname();</span>
+<span class="nc" id="L159">				Print pr = new Print();</span>
+<span class="nc" id="L160">				pr.setVisible(true);</span>
+				
+				
+<span class="nc" id="L163">			}</span>
+		});
+<span class="fc" id="L165">		printButton.setBounds(573, 269, 116, 32);</span>
+<span class="fc" id="L166">		contentPane.add(printButton);</span>
+<span class="fc" id="L167">		changeButton.setBounds(588, 219, 96, 23);</span>
+<span class="fc" id="L168">		contentPane.add(changeButton);</span>
+		
+<span class="fc" id="L170">		JLabel customerLabel = new JLabel(&quot;\u03A3\u03A4\u039F\u0399\u03A7\u0395\u0399\u0391 \u03A0\u0395\u039B\u0391\u03A4\u0397&quot;);</span>
+<span class="fc" id="L171">		customerLabel.setFont(customerLabel.getFont().deriveFont(customerLabel.getFont().getStyle() | Font.BOLD));</span>
+<span class="fc" id="L172">		customerLabel.setBounds(588, 26, 102, 14);</span>
+<span class="fc" id="L173">		contentPane.add(customerLabel);</span>
+		
+<span class="fc" id="L175">		nameText = new JTextField();</span>
+<span class="fc" id="L176">		nameText.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="fc" id="L177">		nameText.setBounds(573, 42, 117, 20);</span>
+<span class="fc" id="L178">		contentPane.add(nameText);</span>
+<span class="fc" id="L179">		nameText.setName(&quot;name&quot;); //Set Name to textfield for TESTING</span>
+<span class="fc" id="L180">		nameText.setColumns(10);</span>
+		
+<span class="fc" id="L182">		surnameText = new JTextField();</span>
+<span class="fc" id="L183">		surnameText.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="fc" id="L184">		surnameText.setBounds(573, 73, 117, 20);</span>
+<span class="fc" id="L185">		contentPane.add(surnameText);</span>
+<span class="fc" id="L186">		surnameText.setName(&quot;surname&quot;); //Set Name to textfield for TESTING</span>
+<span class="fc" id="L187">		surnameText.setColumns(10);</span>
+		
+<span class="fc" id="L189">		JLabel announceLabel = new JLabel(&quot;\u0391\u039D\u0391\u039A\u039F\u0399\u039D\u03A9\u03A3\u0395\u0399\u03A3&quot;);</span>
+<span class="fc" id="L190">		announceLabel.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 23));</span>
+<span class="fc" id="L191">		announceLabel.setBounds(276, 300, 213, 24);</span>
+<span class="fc" id="L192">		contentPane.add(announceLabel);</span>
+		
+<span class="fc" id="L194">		JTextArea textArea = new JTextArea();</span>
+<span class="fc" id="L195">		textArea.setBounds(10, 335, 702, 131);</span>
+<span class="fc" id="L196">		contentPane.add(textArea);</span>
+		
+<span class="fc" id="L198">		JLabel label = new JLabel(&quot;\u039F\u039D\u039F\u039C\u0391 :&quot;);</span>
+<span class="fc" id="L199">		label.setBounds(506, 45, 57, 14);</span>
+<span class="fc" id="L200">		contentPane.add(label);</span>
+		
+<span class="fc" id="L202">		JLabel label1 = new JLabel(&quot;\u0395\u03A0\u03A9\u039D\u03A5\u039C\u039F :&quot;);</span>
+<span class="fc" id="L203">		label1.setBounds(497, 76, 66, 14);</span>
+<span class="fc" id="L204">		contentPane.add(label1);</span>
+		
+<span class="fc" id="L206">		final JLabel ticket_price = new JLabel(&quot;0,00 \u20AC&quot;);</span>
+<span class="fc" id="L207">		ticket_price.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L208">		ticket_price.setBounds(605, 133, 57, 20);</span>
+<span class="fc" id="L209">		contentPane.add(ticket_price);</span>
+		
+<span class="fc" id="L211">		JButton choose = new JButton(&quot;\u0395\u03A0\u0399\u039B\u039F\u0393\u0397&quot;);</span>
+<span class="fc" id="L212">		choose.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				
+<span class="nc" id="L215">				String route = (String) routes_list.getSelectedValue();</span>
+				//Pernoume thn timh tou eishthriou me bash thn Perioxh pou epileksame
+<span class="nc" id="L217">				String tp = String.valueOf(data.getPrice(route));</span>
+<span class="nc" id="L218">				Cashier.prPrice = tp;</span>
+<span class="nc" id="L219">				ticket_price.setText(tp + &quot; €&quot;);</span>
+				
+<span class="nc" id="L221">				days_list.setListData(data.getDays(route));</span>
+<span class="nc" id="L222">				time_list.setListData(data.getTimes(route));</span>
+				
+
+<span class="nc" id="L225">			}</span>
+		});
+<span class="fc" id="L227">		choose.setBounds(10, 257, 143, 32);</span>
+<span class="fc" id="L228">		contentPane.add(choose);</span>
+		
+<span class="fc" id="L230">		JLabel label2 = new JLabel(&quot;\u03A4\u0399\u039C\u0397 \u0395\u0399\u03A3\u0397\u03A4\u0397\u03A1\u0399\u039F\u03A5&quot;);</span>
+<span class="fc" id="L231">		label2.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 11));</span>
+<span class="fc" id="L232">		label2.setBounds(588, 114, 96, 20);</span>
+<span class="fc" id="L233">		contentPane.add(label2);</span>
+		
+	
+		
+<span class="fc" id="L237">		Announce an = new Announce();</span>
+		try {
+<span class="fc" id="L239">			textArea.read(an.readFile(), &quot;textArea&quot;);</span>
+<span class="pc" id="L240">		} catch (IOException e1) {</span>
+<span class="nc" id="L241">			e1.printStackTrace();</span>
+		}
+
+<span class="fc" id="L244">	}</span>
+	
+	public String getPayment() {
+<span class="fc" id="L247">        return paymentField.getText();</span>
+    } 
+	 	
+	public String getClientName(){
+<span class="fc" id="L251">		return nameText.getText();</span>
+	}
+	public String getClientSurname(){
+<span class="fc" id="L254">		return surnameText.getText();</span>
+	}
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Announce.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">program</a> &gt; <span class="el_source">Announce.java</span></div><h1>Announce.java</h1><pre class="source lang-java linenums">package program;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+<span class="fc" id="L9">public class Announce {</span>
+
+	public void writeFile(String str){
+		
+		try{
+<span class="nc" id="L14">			BufferedWriter outFile = new BufferedWriter(new FileWriter(&quot;Announcements.txt&quot;,true));</span>
+<span class="nc" id="L15">			outFile.write(str + &quot;\r\n&quot;);</span>
+<span class="nc" id="L16">			outFile.close();</span>
+<span class="nc" id="L17">		}catch(IOException ioe){</span>
+<span class="nc" id="L18">			ioe.printStackTrace();</span>
+		}
+		
+<span class="nc" id="L21">	}</span>
+	
+	public BufferedReader readFile(){
+		try{
+<span class="fc" id="L25">			BufferedReader file = new BufferedReader(new FileReader(&quot;Announcements.txt&quot;));</span>
+<span class="fc" id="L26">			return file;</span>
+<span class="nc" id="L27">		}catch(IOException ioe){</span>
+<span class="nc" id="L28">			ioe.printStackTrace();</span>
+			
+		}
+<span class="nc" id="L31">		return null;</span>
+
+	}
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>

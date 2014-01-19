@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Data.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SoftEng (Jan 2, 2014 5:19:19 PM)</a> &gt; <a href="../../index.html" class="el_group">SoftEng</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.html" class="el_package">program</a> &gt; <span class="el_source">Data.java</span></div><h1>Data.java</h1><pre class="source lang-java linenums">package program;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
+
+import database.JDBCMySQLConnection;
+
+<span class="fc" id="L12">public class Data { // NOPMD by Stam on 12/31/13 7:49 PM</span>
+	
+	
+	public double calculateChange(String gp,double price){
+<span class="fc" id="L16">		double change = 0.00;</span>
+<span class="fc" id="L17">	    double payment = Double.parseDouble(gp);</span>
+<span class="fc" id="L18">		change = payment - price;</span>
+<span class="fc" id="L19">		return change;</span>
+	}
+	
+	//Pernoume apo thn Vash tis Perioxes
+	static final Vector getRoutes(){
+		 ResultSet rs;
+<span class="fc" id="L25">	     Connection connection = null;</span>
+	     Statement statement; 
+	     
+<span class="fc" id="L28">	     String query = &quot;SELECT * FROM perioxes ORDER BY ΠΕΡΙΟΧΗ&quot;;</span>
+<span class="fc" id="L29">	     Vector routes = new Vector();</span>
+
+	     
+	     try {
+<span class="fc" id="L33">	            connection = JDBCMySQLConnection.getConnection();</span>
+<span class="fc" id="L34">	            statement = connection.createStatement(); </span>
+<span class="fc" id="L35">	            rs = statement.executeQuery(query);</span>
+
+<span class="fc bfc" id="L37" title="All 2 branches covered.">	            while(rs.next()) {</span>
+	            	
+<span class="fc" id="L39">	                routes.addElement(rs.getString(&quot;ΠΕΡΙΟΧΗ&quot;));</span>
+
+	            }
+	            
+<span class="fc" id="L43">	            statement.close();</span>
+<span class="fc" id="L44">	            connection.close();</span>
+	            
+<span class="pc" id="L46">	        } catch (SQLException e) {</span>
+<span class="nc" id="L47">	            e.printStackTrace();</span>
+<span class="nc" id="L48">	        } finally {</span>
+<span class="pc bpc" id="L49" title="5 of 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="pc" id="L51">	                    connection.close();</span>
+<span class="pc" id="L52">	                } catch (SQLException e) {</span>
+<span class="nc" id="L53">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L56">	        }</span>
+	     
+	   
+<span class="fc" id="L59">	    return routes;</span>
+		
+	}
+	//Pernoume apo thn Vash tis Times
+	public static final Double getPrice(String perioxh){
+		 ResultSet rs;
+<span class="fc" id="L65">	     Connection connection = null;</span>
+<span class="fc" id="L66"> 	     Double price = 0.0;</span>
+ 	     PreparedStatement ps;
+
+	     try {
+<span class="fc" id="L70">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="fc" id="L72">	            ps = connection.prepareStatement(&quot;SELECT ΤΙΜΗ FROM test.times JOIN test.perioxes ON perioxes.pid=times.pid WHERE perioxes.ΠΕΡΙΟΧΗ= ? &quot;);</span>
+<span class="fc" id="L73">	            ps.setString(1, perioxh);</span>
+<span class="fc" id="L74">	            rs = ps.executeQuery();</span>
+
+<span class="fc bfc" id="L76" title="All 2 branches covered.">	            while(rs.next()) {</span>
+	            	
+<span class="fc" id="L78">	                price = rs.getDouble(&quot;ΤΙΜΗ&quot;);</span>
+
+	            }
+	            
+	            //statement.close();
+	            //connection.close();
+	            
+<span class="pc" id="L85">	        } catch (SQLException e) {</span>
+<span class="nc" id="L86">	            e.printStackTrace();</span>
+<span class="nc" id="L87">	        } finally {</span>
+<span class="pc bpc" id="L88" title="5 of 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="pc" id="L90">	                    connection.close();</span>
+<span class="pc" id="L91">	                } catch (SQLException e) {</span>
+<span class="nc" id="L92">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L95">	        }</span>
+	     
+	    //System.out.println(&quot;Initial size: &quot; + routes.size());
+	    //System.out.println(price);
+	    
+<span class="fc" id="L100">	    return price;</span>
+	}
+
+	public static final Vector getDays(String perioxh){
+		
+<span class="fc" id="L105">		 Vector days = new Vector();</span>
+<span class="fc" id="L106">		 int pid=0;</span>
+		 ResultSet rs;
+		 ResultSet rs2;
+<span class="fc" id="L109">	     Connection connection = null;</span>
+	     PreparedStatement ps;
+	     PreparedStatement ps2;
+
+	     try {
+<span class="fc" id="L114">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="fc" id="L116">	            ps = connection.prepareStatement(&quot;SELECT pid from test.perioxes WHERE ΠΕΡΙΟΧΗ= ? &quot;);</span>
+<span class="fc" id="L117">	            ps.setString(1, perioxh);</span>
+<span class="fc" id="L118">	            rs = ps.executeQuery();</span>
+	            
+	            
+	           
+
+<span class="fc bfc" id="L123" title="All 2 branches covered.">	            while(rs.next()) {</span>
+	            	
+	            	
+<span class="fc" id="L126">	                pid = rs.getInt(&quot;pid&quot;);</span>
+	                
+	            }
+	            
+	            
+	            
+<span class="fc" id="L132">	            ps2 = connection.prepareStatement(&quot;SELECT ΗΜΕΡΕΣ FROM test.meres JOIN test.routes ON meres.mid=routes.mid WHERE pid= ?&quot;);</span>
+<span class="fc" id="L133">	            ps2.setInt(1,pid );</span>
+<span class="fc" id="L134">	            rs2 = ps2.executeQuery();</span>
+	            
+<span class="fc bfc" id="L136" title="All 2 branches covered.">	            while(rs2.next()) {</span>
+	            	
+<span class="fc" id="L138">	            	days.addElement(rs2.getString(&quot;ΗΜΕΡΕΣ&quot;));</span>
+	            	
+	            }
+	            
+	            
+	            
+	            
+<span class="pc" id="L145">	        } catch (SQLException e) {</span>
+<span class="nc" id="L146">	            e.printStackTrace();</span>
+<span class="nc" id="L147">	        } finally {</span>
+<span class="pc bpc" id="L148" title="5 of 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="pc" id="L150">	                    connection.close();</span>
+<span class="pc" id="L151">	                } catch (SQLException e) {</span>
+<span class="nc" id="L152">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L155">	        }</span>
+
+<span class="fc" id="L157">		return days;</span>
+	}
+	
+	public static final Vector getTimes(String perioxh){
+<span class="fc" id="L161">		 Vector times = new Vector();</span>
+<span class="fc" id="L162">		 int pid=0;</span>
+		 ResultSet rs;
+		 ResultSet rs2;
+<span class="fc" id="L165">	     Connection connection = null;</span>
+	     PreparedStatement ps;
+	     PreparedStatement ps2;
+
+	     try {
+<span class="fc" id="L170">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="fc" id="L172">	            ps = connection.prepareStatement(&quot;SELECT pid from test.perioxes WHERE ΠΕΡΙΟΧΗ= ? &quot;);</span>
+<span class="fc" id="L173">	            ps.setString(1, perioxh);</span>
+<span class="fc" id="L174">	            rs = ps.executeQuery();</span>
+	            
+	            
+	           
+
+<span class="fc bfc" id="L179" title="All 2 branches covered.">	            while(rs.next()) {</span>
+	            	
+	            	
+<span class="fc" id="L182">	                pid = rs.getInt(&quot;pid&quot;);</span>
+	                
+	            }
+	            
+	            
+	            
+<span class="fc" id="L188">	            ps2 = connection.prepareStatement(&quot;SELECT ΩΡΕΣ FROM test.wres JOIN test.combo ON wres.wid=combo.wid WHERE pid= ?&quot;);</span>
+<span class="fc" id="L189">	            ps2.setInt(1,pid );</span>
+<span class="fc" id="L190">	            rs2 = ps2.executeQuery();</span>
+	            
+<span class="fc bfc" id="L192" title="All 2 branches covered.">	            while(rs2.next()) {</span>
+	            	
+<span class="fc" id="L194">	            	times.addElement(rs2.getString(&quot;ΩΡΕΣ&quot;));</span>
+	            	
+	            }
+	            
+	           
+	            
+	            
+<span class="pc" id="L201">	        } catch (SQLException e) {</span>
+<span class="nc" id="L202">	            e.printStackTrace();</span>
+<span class="nc" id="L203">	        } finally {</span>
+<span class="pc bpc" id="L204" title="5 of 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="pc" id="L206">	                    connection.close();</span>
+<span class="pc" id="L207">	                } catch (SQLException e) {</span>
+<span class="nc" id="L208">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L211">	        }</span>
+	     
+	    //System.out.println(&quot;Initial size: &quot; + routes.size());
+	    //System.out.println(pid);
+	    //System.out.println(days);
+		
+		
+		
+		
+		
+<span class="fc" id="L221">		return times;</span>
+	}
+
+	public static final void insertPerioxes(String perioxh){
+		
+		
+<span class="nc" id="L227">	     Connection connection = null;</span>
+<span class="nc" id="L228">	     PreparedStatement ps =null;</span>
+
+
+	     try {
+<span class="nc" id="L232">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="nc" id="L234">	            ps = connection.prepareStatement(&quot;INSERT INTO test.perioxes (ΠΕΡΙΟΧΗ) VALUES ( ? )&quot;);</span>
+<span class="nc" id="L235">	            ps.setString(1, perioxh);</span>
+<span class="nc" id="L236">	            ps.executeUpdate();</span>
+
+	         
+   
+<span class="nc" id="L240">	        } catch (SQLException e) {</span>
+<span class="nc" id="L241">	            e.printStackTrace();</span>
+<span class="nc" id="L242">	        } finally {</span>
+<span class="nc bnc" id="L243" title="All 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="nc" id="L245">	                    connection.close();</span>
+<span class="nc" id="L246">	                } catch (SQLException e) {</span>
+<span class="nc" id="L247">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L250">	        }</span>
+	     
+	    
+		
+		
+<span class="nc" id="L255">	}</span>
+
+	static final void insertRoutes(String perioxh,String hmera){
+		
+<span class="nc" id="L259">		 int pid=0;</span>
+<span class="nc" id="L260">		 int mid=0;</span>
+		 ResultSet rs;
+		 ResultSet rs2;
+		 ResultSet rs3;
+<span class="nc" id="L264">	     Connection connection = null;</span>
+	     PreparedStatement ps;
+	     PreparedStatement ps2;
+	     PreparedStatement ps3;
+	     try {
+<span class="nc" id="L269">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="nc" id="L271">	            ps = connection.prepareStatement(&quot;SELECT pid from test.perioxes WHERE ΠΕΡΙΟΧΗ= ? &quot;);</span>
+<span class="nc" id="L272">	            ps.setString(1, perioxh);</span>
+<span class="nc" id="L273">	            rs = ps.executeQuery();</span>
+	            
+	            
+	           
+
+<span class="nc bnc" id="L278" title="All 2 branches missed.">	            while(rs.next()) {</span>
+	            	
+	            	
+<span class="nc" id="L281">	                pid = rs.getInt(&quot;pid&quot;);</span>
+	                
+	            }
+	            
+	            
+	            
+<span class="nc" id="L287">	            ps2 = connection.prepareStatement(&quot;SELECT mid from test.meres WHERE ΗΜΕΡΕΣ= ? &quot;);</span>
+<span class="nc" id="L288">	            ps2.setString(1,hmera );</span>
+<span class="nc" id="L289">	            rs2 = ps2.executeQuery();</span>
+	            
+<span class="nc bnc" id="L291" title="All 2 branches missed.">	            while(rs2.next()) {</span>
+	            	
+<span class="nc" id="L293">	            	mid = rs2.getInt(&quot;mid&quot;);</span>
+	            	
+	            }
+	            
+<span class="nc" id="L297">	            ps3 = connection.prepareStatement(&quot;INSERT INTO test.routes (pid, mid) VALUES (? , ?)&quot;);</span>
+<span class="nc" id="L298">	            ps3.setInt(1,pid );</span>
+<span class="nc" id="L299">	            ps3.setInt(2,mid );</span>
+<span class="nc" id="L300">	            ps3.executeUpdate();</span>
+	            
+	            
+	           
+	            
+	            
+<span class="nc" id="L306">	        } catch (SQLException e) {</span>
+<span class="nc" id="L307">	            e.printStackTrace();</span>
+<span class="nc" id="L308">	        } finally {</span>
+<span class="nc bnc" id="L309" title="All 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="nc" id="L311">	                    connection.close();</span>
+<span class="nc" id="L312">	                } catch (SQLException e) {</span>
+<span class="nc" id="L313">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L316">	        }</span>
+	     
+
+<span class="nc" id="L319">	}</span>
+
+	static final void insertTimes(String perioxh,Double price){
+
+		
+<span class="nc" id="L324">		int pid=0;</span>
+		 ResultSet rs;
+<span class="nc" id="L326">	     Connection connection = null;</span>
+	     PreparedStatement ps;
+	     PreparedStatement ps2;
+	     
+	     try {
+<span class="nc" id="L331">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="nc" id="L333">	            ps = connection.prepareStatement(&quot;SELECT pid from test.perioxes WHERE ΠΕΡΙΟΧΗ= ? &quot;);</span>
+<span class="nc" id="L334">	            ps.setString(1, perioxh);</span>
+<span class="nc" id="L335">	            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L337" title="All 2 branches missed.">	            while(rs.next()) {</span>
+	            	
+	            	
+<span class="nc" id="L340">	                pid = rs.getInt(&quot;pid&quot;);</span>
+	                
+	            }
+
+<span class="nc" id="L344">	            ps2 = connection.prepareStatement(&quot;INSERT INTO test.times (ΤΙΜΗ, pid) VALUES (? , ?) &quot;);</span>
+<span class="nc" id="L345">	            ps2.setDouble(1, price);</span>
+<span class="nc" id="L346">	            ps2.setInt(2,pid);</span>
+<span class="nc" id="L347">	            ps2.executeUpdate();</span>
+	            
+
+	            
+<span class="nc" id="L351">	        } catch (SQLException e) {</span>
+<span class="nc" id="L352">	            e.printStackTrace();</span>
+<span class="nc" id="L353">	        } finally {</span>
+<span class="nc bnc" id="L354" title="All 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="nc" id="L356">	                    connection.close();</span>
+<span class="nc" id="L357">	                } catch (SQLException e) {</span>
+<span class="nc" id="L358">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L361">	        }</span>
+	     
+	 
+<span class="nc" id="L364">	}</span>
+	
+	static final void insertWres(String perioxh,String wra){
+<span class="nc" id="L367">		 int pid=0;</span>
+<span class="nc" id="L368">		 int wid=0;</span>
+		 ResultSet rs;
+		 ResultSet rs2;
+		 ResultSet rs3;
+<span class="nc" id="L372">	     Connection connection = null;</span>
+	     PreparedStatement ps;
+	     PreparedStatement ps2;
+	     PreparedStatement ps3;
+	     try {
+<span class="nc" id="L377">	            connection = JDBCMySQLConnection.getConnection();</span>
+	            
+<span class="nc" id="L379">	            ps = connection.prepareStatement(&quot;SELECT pid from test.perioxes WHERE ΠΕΡΙΟΧΗ= ? &quot;);</span>
+<span class="nc" id="L380">	            ps.setString(1, perioxh);</span>
+<span class="nc" id="L381">	            rs = ps.executeQuery();</span>
+	            
+	            
+	           
+
+<span class="nc bnc" id="L386" title="All 2 branches missed.">	            while(rs.next()) {</span>
+	            	
+	            	
+<span class="nc" id="L389">	                pid = rs.getInt(&quot;pid&quot;);</span>
+	                
+	            }
+	            
+	            
+	            
+<span class="nc" id="L395">	            ps2 = connection.prepareStatement(&quot;SELECT wid from test.wres WHERE ΩΡΕΣ= ? &quot;);</span>
+<span class="nc" id="L396">	            ps2.setString(1,wra );</span>
+<span class="nc" id="L397">	            rs2 = ps2.executeQuery();</span>
+	            
+<span class="nc bnc" id="L399" title="All 2 branches missed.">	            while(rs2.next()) {</span>
+	            	
+<span class="nc" id="L401">	            	wid = rs2.getInt(&quot;wid&quot;);</span>
+	            	
+	            }
+	            
+<span class="nc" id="L405">	            ps3 = connection.prepareStatement(&quot;INSERT INTO test.combo (pid, wid) VALUES (? , ?)&quot;);</span>
+<span class="nc" id="L406">	            ps3.setInt(1,pid );</span>
+<span class="nc" id="L407">	            ps3.setInt(2,wid );</span>
+<span class="nc" id="L408">	            ps3.executeUpdate();</span>
+	            
+	            
+	           
+	            
+	            
+<span class="nc" id="L414">	        } catch (SQLException e) {</span>
+<span class="nc" id="L415">	            e.printStackTrace();</span>
+<span class="nc" id="L416">	        } finally {</span>
+<span class="nc bnc" id="L417" title="All 6 branches missed.">	            if (connection != null) {</span>
+	                try {
+<span class="nc" id="L419">	                    connection.close();</span>
+<span class="nc" id="L420">	                } catch (SQLException e) {</span>
+<span class="nc" id="L421">	                    e.printStackTrace();</span>
+	                }
+	            }
+<span class="nc" id="L424">	        }</span>
+	     
+	  
+		
+<span class="nc" id="L428">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>SoftEng (Jan 2, 2014 5:19:19 PM)</div></body></html>
