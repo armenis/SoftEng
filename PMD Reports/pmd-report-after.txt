@@ -1,0 +1,479 @@
+src/database/JDBCMySQLConnection.java(21,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/database/JDBCMySQLConnection.java(34,  EmptyCatchBlock):  Avoid empty catch blocks
+src/database/JDBCMySQLConnection.java(34,  EmptyCatchBlock):  Avoid empty catch blocks
+src/login/HomeDialog.java(22,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/login/HomeDialog.java(27,  MethodArgumentCouldBeFinal):  Parameter 'args' is not assigned and could be declared final
+src/login/HomeDialog.java(29,  LocalVariableCouldBeFinal):  Local variable 'dialog' could be declared final
+src/login/HomeDialog.java(31,  AvoidCatchingGenericException):  Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/login/HomeDialog.java(32,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/login/HomeDialog.java(39,  CallSuperInConstructor):  It is a good practice to call super() in a constructor
+src/login/HomeDialog.java(50,  LocalVariableCouldBeFinal):  Local variable 'adminLabel' could be declared final
+src/login/HomeDialog.java(55,  LocalVariableCouldBeFinal):  Local variable 'cashierLabel' could be declared final
+src/login/HomeDialog.java(60,  LocalVariableCouldBeFinal):  Local variable 'loginButton' could be declared final
+src/login/HomeDialog.java(62,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/login/HomeDialog.java(63,  LocalVariableCouldBeFinal):  Local variable 'log' could be declared final
+src/login/HomeDialog.java(71,  LocalVariableCouldBeFinal):  Local variable 'enterButton' could be declared final
+src/login/HomeDialog.java(73,  ShortVariable):  Avoid variables with short names like e
+src/login/HomeDialog.java(73,  MethodArgumentCouldBeFinal):  Parameter 'e' is not assigned and could be declared final
+src/login/HomeDialog.java(74,  LocalVariableCouldBeFinal):  Local variable 'tamias' could be declared final
+src/login/Login.java(32,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/login/Login.java(32,  SingularField):  Perhaps 'contentPane' could be replaced by a local variable.
+src/login/Login.java(32,  ImmutableField):  Private field 'contentPane' could be made final; it is only initialized in the declaration or constructor.
+src/login/Login.java(33,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/login/Login.java(33,  ImmutableField):  Private field 'usernameText' could be made final; it is only initialized in the declaration or constructor.
+src/login/Login.java(34,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/login/Login.java(34,  ImmutableField):  Private field 'passwordField' could be made final; it is only initialized in the declaration or constructor.
+src/login/Login.java(39,  MethodArgumentCouldBeFinal):  Parameter 'args' is not assigned and could be declared final
+src/login/Login.java(40,  DoNotUseThreads):  To be compliant to J2EE, a webapp should not use any thread.
+src/login/Login.java(43,  LocalVariableCouldBeFinal):  Local variable 'frame' could be declared final
+src/login/Login.java(45,  AvoidCatchingGenericException):  Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/login/Login.java(46,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/login/Login.java(55,  CallSuperInConstructor):  It is a good practice to call super() in a constructor
+src/login/Login.java(60,  ShortVariable):  Avoid variables with short names like e
+src/login/Login.java(60,  MethodArgumentCouldBeFinal):  Parameter 'e' is not assigned and could be declared final
+src/login/Login.java(61,  ShortVariable):  Avoid variables with short names like h
+src/login/Login.java(61,  LocalVariableCouldBeFinal):  Local variable 'h' could be declared final
+src/login/Login.java(72,  LocalVariableCouldBeFinal):  Local variable 'usernameLabel' could be declared final
+src/login/Login.java(76,  LocalVariableCouldBeFinal):  Local variable 'passwordLabel' could be declared final
+src/login/Login.java(86,  LocalVariableCouldBeFinal):  Local variable 'loginButton' could be declared final
+src/login/Login.java(88,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/login/Login.java(90,  LocalVariableCouldBeFinal):  Local variable 'frame' could be declared final
+src/login/Login.java(94,  LawOfDemeter):  Potential violation of Law of Demeter (method chain calls)
+src/login/Login.java(116,  MethodArgumentCouldBeFinal):  Parameter 'password' is not assigned and could be declared final
+src/login/Login.java(116,  MethodArgumentCouldBeFinal):  Parameter 'username' is not assigned and could be declared final
+src/login/Login.java(118,  PositionLiteralsFirstInComparisons):  Position literals first in String comparisons
+src/login/Login.java(118,  PositionLiteralsFirstInComparisons):  Position literals first in String comparisons
+src/login/Login.java(119,  OnlyOneReturn):  A method should have only one exit point, and that should be the last statement in the method
+src/login/Login.java(124,  LawOfDemeter):  Potential violation of Law of Demeter (method chain calls)
+src/program/Admin.java(36,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Admin.java(36,  SingularField):  Perhaps 'contentPane' could be replaced by a local variable.
+src/program/Admin.java(36,  ImmutableField):  Private field 'contentPane' could be made final; it is only initialized in the declaration or constructor.
+src/program/Admin.java(37,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Admin.java(37,  ImmutableField):  Private field 'dest' could be made final; it is only initialized in the declaration or constructor.
+src/program/Admin.java(38,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Admin.java(38,  ImmutableField):  Private field 'day' could be made final; it is only initialized in the declaration or constructor.
+src/program/Admin.java(39,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Admin.java(39,  ImmutableField):  Private field 'time' could be made final; it is only initialized in the declaration or constructor.
+src/program/Admin.java(40,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Admin.java(40,  ImmutableField):  Private field 'price' could be made final; it is only initialized in the declaration or constructor.
+src/program/Admin.java(45,  MethodArgumentCouldBeFinal):  Parameter 'args' is not assigned and could be declared final
+src/program/Admin.java(46,  DoNotUseThreads):  To be compliant to J2EE, a webapp should not use any thread.
+src/program/Admin.java(49,  LocalVariableCouldBeFinal):  Local variable 'frame' could be declared final
+src/program/Admin.java(51,  AvoidCatchingGenericException):  Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/program/Admin.java(52,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Admin.java(61,  CallSuperInConstructor):  It is a good practice to call super() in a constructor
+src/program/Admin.java(66,  ShortVariable):  Avoid variables with short names like e
+src/program/Admin.java(66,  MethodArgumentCouldBeFinal):  Parameter 'e' is not assigned and could be declared final
+src/program/Admin.java(67,  ShortVariable):  Avoid variables with short names like h
+src/program/Admin.java(67,  LocalVariableCouldBeFinal):  Local variable 'h' could be declared final
+src/program/Admin.java(84,  LocalVariableCouldBeFinal):  Local variable 'publish' could be declared final
+src/program/Admin.java(86,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/program/Admin.java(88,  LocalVariableCouldBeFinal):  Local variable 'anak' could be declared final
+src/program/Admin.java(89,  ShortVariable):  Avoid variables with short names like an
+src/program/Admin.java(89,  LocalVariableCouldBeFinal):  Local variable 'an' could be declared final
+src/program/Admin.java(97,  LocalVariableCouldBeFinal):  Local variable 'anak' could be declared final
+src/program/Admin.java(103,  LocalVariableCouldBeFinal):  Local variable 'label1' could be declared final
+src/program/Admin.java(128,  LocalVariableCouldBeFinal):  Local variable 'label2' could be declared final
+src/program/Admin.java(132,  LocalVariableCouldBeFinal):  Local variable 'label3' could be declared final
+src/program/Admin.java(136,  LocalVariableCouldBeFinal):  Local variable 'label4' could be declared final
+src/program/Admin.java(140,  LocalVariableCouldBeFinal):  Local variable 'label' could be declared final
+src/program/Admin.java(152,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/program/Admin.java(167,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/program/Admin.java(177,  LocalVariableCouldBeFinal):  Local variable 'label5' could be declared final
+src/program/Announce.java(11,  MethodArgumentCouldBeFinal):  Parameter 'str' is not assigned and could be declared final
+src/program/Announce.java(14,  LocalVariableCouldBeFinal):  Local variable 'outFile' could be declared final
+src/program/Announce.java(18,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Announce.java(25,  LocalVariableCouldBeFinal):  Local variable 'file' could be declared final
+src/program/Announce.java(26,  OnlyOneReturn):  A method should have only one exit point, and that should be the last statement in the method
+src/program/Announce.java(26,  UnnecessaryLocalBeforeReturn):  Consider simply returning the value vs storing it in local variable 'file'
+src/program/Announce.java(28,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Cashier.java(39,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Cashier.java(39,  SingularField):  Perhaps 'contentPane' could be replaced by a local variable.
+src/program/Cashier.java(39,  ImmutableField):  Private field 'contentPane' could be made final; it is only initialized in the declaration or constructor.
+src/program/Cashier.java(40,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Cashier.java(40,  ImmutableField):  Private field 'paymentField' could be made final; it is only initialized in the declaration or constructor.
+src/program/Cashier.java(41,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Cashier.java(41,  ImmutableField):  Private field 'nameText' could be made final; it is only initialized in the declaration or constructor.
+src/program/Cashier.java(42,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Cashier.java(42,  ImmutableField):  Private field 'surnameText' could be made final; it is only initialized in the declaration or constructor.
+src/program/Cashier.java(43,  AssignmentToNonFinalStatic):  Possible unsafe assignment to a non-final static field in a constructor.
+src/program/Cashier.java(44,  AssignmentToNonFinalStatic):  Possible unsafe assignment to a non-final static field in a constructor.
+src/program/Cashier.java(45,  AssignmentToNonFinalStatic):  Possible unsafe assignment to a non-final static field in a constructor.
+src/program/Cashier.java(46,  AssignmentToNonFinalStatic):  Possible unsafe assignment to a non-final static field in a constructor.
+src/program/Cashier.java(47,  AssignmentToNonFinalStatic):  Possible unsafe assignment to a non-final static field in a constructor.
+src/program/Cashier.java(48,  AssignmentToNonFinalStatic):  Possible unsafe assignment to a non-final static field in a constructor.
+src/program/Cashier.java(55,  MethodArgumentCouldBeFinal):  Parameter 'args' is not assigned and could be declared final
+src/program/Cashier.java(56,  DoNotUseThreads):  To be compliant to J2EE, a webapp should not use any thread.
+src/program/Cashier.java(59,  LocalVariableCouldBeFinal):  Local variable 'frame' could be declared final
+src/program/Cashier.java(61,  AvoidCatchingGenericException):  Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/program/Cashier.java(62,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Cashier.java(71,  CallSuperInConstructor):  It is a good practice to call super() in a constructor
+src/program/Cashier.java(71,  NcssConstructorCount):  The constructor with 0 parameters has an NCSS line count of 100
+src/program/Cashier.java(76,  ShortVariable):  Avoid variables with short names like e
+src/program/Cashier.java(76,  MethodArgumentCouldBeFinal):  Parameter 'e' is not assigned and could be declared final
+src/program/Cashier.java(77,  ShortVariable):  Avoid variables with short names like h
+src/program/Cashier.java(77,  LocalVariableCouldBeFinal):  Local variable 'h' could be declared final
+src/program/Cashier.java(91,  LocalVariableCouldBeFinal):  Local variable 'routesLabel' could be declared final
+src/program/Cashier.java(96,  LocalVariableCouldBeFinal):  Local variable 'timeLabel' could be declared final
+src/program/Cashier.java(101,  LocalVariableCouldBeFinal):  Local variable 'daysLabel' could be declared final
+src/program/Cashier.java(124,  LocalVariableCouldBeFinal):  Local variable 'paymentLabel' could be declared final
+src/program/Cashier.java(136,  AvoidDuplicateLiterals):  The String literal "Tahoma" appears 4 times in this file; the first occurrence is on line 136
+src/program/Cashier.java(141,  LocalVariableCouldBeFinal):  Local variable 'changeButton' could be declared final
+src/program/Cashier.java(143,  ShortVariable):  Avoid variables with short names like e
+src/program/Cashier.java(143,  MethodArgumentCouldBeFinal):  Parameter 'e' is not assigned and could be declared final
+src/program/Cashier.java(145,  LocalVariableCouldBeFinal):  Local variable 'price' could be declared final
+src/program/Cashier.java(146,  LocalVariableCouldBeFinal):  Local variable 'change' could be declared final
+src/program/Cashier.java(147,  UselessStringValueOf):  No need to call String.valueOf to append to a string.
+src/program/Cashier.java(153,  LocalVariableCouldBeFinal):  Local variable 'printButton' could be declared final
+src/program/Cashier.java(155,  ShortVariable):  Avoid variables with short names like e
+src/program/Cashier.java(155,  MethodArgumentCouldBeFinal):  Parameter 'e' is not assigned and could be declared final
+src/program/Cashier.java(162,  ShortVariable):  Avoid variables with short names like pr
+src/program/Cashier.java(162,  LocalVariableCouldBeFinal):  Local variable 'pr' could be declared final
+src/program/Cashier.java(173,  LocalVariableCouldBeFinal):  Local variable 'customerLabel' could be declared final
+src/program/Cashier.java(192,  LocalVariableCouldBeFinal):  Local variable 'announceLabel' could be declared final
+src/program/Cashier.java(197,  LocalVariableCouldBeFinal):  Local variable 'textArea' could be declared final
+src/program/Cashier.java(201,  LocalVariableCouldBeFinal):  Local variable 'label' could be declared final
+src/program/Cashier.java(205,  LocalVariableCouldBeFinal):  Local variable 'label1' could be declared final
+src/program/Cashier.java(214,  LocalVariableCouldBeFinal):  Local variable 'choose' could be declared final
+src/program/Cashier.java(216,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/program/Cashier.java(218,  LocalVariableCouldBeFinal):  Local variable 'route' could be declared final
+src/program/Cashier.java(220,  ShortVariable):  Avoid variables with short names like tp
+src/program/Cashier.java(220,  LocalVariableCouldBeFinal):  Local variable 'tp' could be declared final
+src/program/Cashier.java(233,  LocalVariableCouldBeFinal):  Local variable 'label2' could be declared final
+src/program/Cashier.java(240,  ShortVariable):  Avoid variables with short names like an
+src/program/Cashier.java(240,  LocalVariableCouldBeFinal):  Local variable 'an' could be declared final
+src/program/Cashier.java(244,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(15,  ShortVariable):  Avoid variables with short names like gp
+src/program/Data.java(15,  MethodArgumentCouldBeFinal):  Parameter 'gp' is not assigned and could be declared final
+src/program/Data.java(15,  MethodArgumentCouldBeFinal):  Parameter 'price' is not assigned and could be declared final
+src/program/Data.java(17,  LocalVariableCouldBeFinal):  Local variable 'payment' could be declared final
+src/program/Data.java(23,  LooseCoupling):  Avoid using implementation types like 'Vector'; use the interface instead
+src/program/Data.java(23,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/program/Data.java(23,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/program/Data.java(24,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(24,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(26,  CloseResource):  Ensure that resources like this Statement object are closed after use
+src/program/Data.java(28,  LocalVariableCouldBeFinal):  Local variable 'query' could be declared final
+src/program/Data.java(29,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/program/Data.java(29,  LocalVariableCouldBeFinal):  Local variable 'routes' could be declared final
+src/program/Data.java(29,  UseArrayListInsteadOfVector):  Use ArrayList instead of Vector
+src/program/Data.java(34,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(35,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(37,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(39,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(39,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(43,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(44,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(47,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(47,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(51,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(53,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(53,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(63,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(64,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(64,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(67,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(72,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(73,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(74,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(76,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(78,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(84,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(84,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(88,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(90,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(90,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(98,  LooseCoupling):  Avoid using implementation types like 'Vector'; use the interface instead
+src/program/Data.java(98,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/program/Data.java(98,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(100,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/program/Data.java(100,  LocalVariableCouldBeFinal):  Local variable 'days' could be declared final
+src/program/Data.java(100,  UseArrayListInsteadOfVector):  Use ArrayList instead of Vector
+src/program/Data.java(102,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(102,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(103,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(105,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(111,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(111,  AvoidDuplicateLiterals):  The String literal "SELECT pid from test.perioxes WHERE пеяиовг= ? " appears 5 times in this file; the first occurrence is on line 111
+src/program/Data.java(112,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(113,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(115,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(118,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(118,  AvoidDuplicateLiterals):  The String literal "pid" appears 5 times in this file; the first occurrence is on line 118
+src/program/Data.java(122,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(123,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(124,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(126,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(128,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(128,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(134,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(134,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(138,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(140,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(140,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(148,  LooseCoupling):  Avoid using implementation types like 'Vector'; use the interface instead
+src/program/Data.java(148,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/program/Data.java(148,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(149,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/program/Data.java(149,  LocalVariableCouldBeFinal):  Local variable 'times' could be declared final
+src/program/Data.java(149,  UseArrayListInsteadOfVector):  Use ArrayList instead of Vector
+src/program/Data.java(151,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(151,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(152,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(154,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(160,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(161,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(162,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(164,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(167,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(172,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(173,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(174,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(176,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(178,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(178,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(184,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(184,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(188,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(190,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(190,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(199,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(203,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(208,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(209,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(210,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(214,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(214,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(218,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(220,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(220,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(227,  MethodArgumentCouldBeFinal):  Parameter 'hmera' is not assigned and could be declared final
+src/program/Data.java(227,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(227,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/program/Data.java(231,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(231,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(232,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(234,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(240,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(241,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(242,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(244,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(247,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(251,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(252,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(253,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(255,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(257,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(261,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(262,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(263,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(264,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(268,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(268,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(272,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(274,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(274,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(282,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(282,  MethodArgumentCouldBeFinal):  Parameter 'price' is not assigned and could be declared final
+src/program/Data.java(282,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/program/Data.java(286,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(286,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(288,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(294,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(295,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(296,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(298,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(301,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(305,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(306,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(307,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(308,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(313,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(313,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(317,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(319,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(319,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(327,  MethodArgumentCouldBeFinal):  Parameter 'perioxh' is not assigned and could be declared final
+src/program/Data.java(327,  MethodArgumentCouldBeFinal):  Parameter 'wra' is not assigned and could be declared final
+src/program/Data.java(327,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/program/Data.java(330,  ShortVariable):  Avoid variables with short names like rs
+src/program/Data.java(330,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(331,  CloseResource):  Ensure that resources like this ResultSet object are closed after use
+src/program/Data.java(333,  ShortVariable):  Avoid variables with short names like ps
+src/program/Data.java(339,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(340,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(341,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(343,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(346,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(350,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(351,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(352,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(354,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(356,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(360,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(361,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(362,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(363,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(367,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(367,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(371,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Data.java(373,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Data.java(373,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/program/Print.java(29,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/program/Print.java(29,  SingularField):  Perhaps 'contentPane' could be replaced by a local variable.
+src/program/Print.java(29,  ImmutableField):  Private field 'contentPane' could be made final; it is only initialized in the declaration or constructor.
+src/program/Print.java(34,  MethodArgumentCouldBeFinal):  Parameter 'args' is not assigned and could be declared final
+src/program/Print.java(35,  DoNotUseThreads):  To be compliant to J2EE, a webapp should not use any thread.
+src/program/Print.java(38,  LocalVariableCouldBeFinal):  Local variable 'frame' could be declared final
+src/program/Print.java(40,  AvoidCatchingGenericException):  Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/program/Print.java(41,  AvoidPrintStackTrace):  Avoid printStackTrace(); use a logger call instead.
+src/program/Print.java(50,  CallSuperInConstructor):  It is a good practice to call super() in a constructor
+src/program/Print.java(61,  LocalVariableCouldBeFinal):  Local variable 'destLabel' could be declared final
+src/program/Print.java(63,  AvoidDuplicateLiterals):  The String literal "Tahoma" appears 6 times in this file; the first occurrence is on line 63
+src/program/Print.java(67,  LocalVariableCouldBeFinal):  Local variable 'nameLabel' could be declared final
+src/program/Print.java(73,  LocalVariableCouldBeFinal):  Local variable 'surnameLabel' could be declared final
+src/program/Print.java(79,  LocalVariableCouldBeFinal):  Local variable 'timeLabel' could be declared final
+src/program/Print.java(85,  LocalVariableCouldBeFinal):  Local variable 'priceLabel' could be declared final
+src/program/Print.java(94,  LocalVariableCouldBeFinal):  Local variable 'dest' could be declared final
+src/program/Print.java(102,  LocalVariableCouldBeFinal):  Local variable 'name' could be declared final
+src/program/Print.java(109,  LocalVariableCouldBeFinal):  Local variable 'surname' could be declared final
+src/program/Print.java(118,  LocalVariableCouldBeFinal):  Local variable 'time' could be declared final
+src/program/Print.java(125,  LocalVariableCouldBeFinal):  Local variable 'price' could be declared final
+src/program/Print.java(134,  MethodArgumentCouldBeFinal):  Parameter 'arg0' is not assigned and could be declared final
+src/program/Print.java(145,  LocalVariableCouldBeFinal):  Local variable 'lblNewLabel' could be declared final
+src/program/Print.java(150,  LocalVariableCouldBeFinal):  Local variable 'day' could be declared final
+src/tests/CashierTest.java(14,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/tests/CashierTest.java(14,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/tests/CashierTest.java(16,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/CashierTest.java(17,  LocalVariableCouldBeFinal):  Local variable 'testString' could be declared final
+src/tests/CashierTest.java(19,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(21,  LocalVariableCouldBeFinal):  Local variable 'input' could be declared final
+src/tests/CashierTest.java(22,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(24,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(25,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(27,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(27,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(31,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/CashierTest.java(32,  LocalVariableCouldBeFinal):  Local variable 'testString' could be declared final
+src/tests/CashierTest.java(34,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(36,  LocalVariableCouldBeFinal):  Local variable 'input' could be declared final
+src/tests/CashierTest.java(37,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(39,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(40,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(42,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(42,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(46,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/CashierTest.java(47,  LocalVariableCouldBeFinal):  Local variable 'testString' could be declared final
+src/tests/CashierTest.java(49,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(51,  LocalVariableCouldBeFinal):  Local variable 'input' could be declared final
+src/tests/CashierTest.java(52,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(54,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(55,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(57,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(57,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(61,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/CashierTest.java(62,  LocalVariableCouldBeFinal):  Local variable 'testuser' could be declared final
+src/tests/CashierTest.java(63,  LocalVariableCouldBeFinal):  Local variable 'user' could be declared final
+src/tests/CashierTest.java(64,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(65,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(66,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(68,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(72,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/CashierTest.java(73,  LocalVariableCouldBeFinal):  Local variable 'testuser' could be declared final
+src/tests/CashierTest.java(74,  LocalVariableCouldBeFinal):  Local variable 'user' could be declared final
+src/tests/CashierTest.java(75,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(76,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(77,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(79,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(83,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/CashierTest.java(84,  LocalVariableCouldBeFinal):  Local variable 'testuser' could be declared final
+src/tests/CashierTest.java(85,  LocalVariableCouldBeFinal):  Local variable 'user' could be declared final
+src/tests/CashierTest.java(86,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/CashierTest.java(87,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(88,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/CashierTest.java(90,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/DataTest.java(16,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/tests/DataTest.java(16,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/tests/DataTest.java(20,  LocalVariableCouldBeFinal):  Local variable 'change' could be declared final
+src/tests/DataTest.java(21,  LocalVariableCouldBeFinal):  Local variable 'testchange' could be declared final
+src/tests/DataTest.java(27,  LocalVariableCouldBeFinal):  Local variable 'perioxh' could be declared final
+src/tests/DataTest.java(28,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/tests/DataTest.java(28,  LocalVariableCouldBeFinal):  Local variable 'days' could be declared final
+src/tests/DataTest.java(28,  UseArrayListInsteadOfVector):  Use ArrayList instead of Vector
+src/tests/DataTest.java(31,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/DataTest.java(36,  LocalVariableCouldBeFinal):  Local variable 'price' could be declared final
+src/tests/DataTest.java(37,  LocalVariableCouldBeFinal):  Local variable 'perioxh' could be declared final
+src/tests/DataTest.java(38,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/DataTest.java(43,  LocalVariableCouldBeFinal):  Local variable 'perioxh' could be declared final
+src/tests/DataTest.java(44,  ReplaceVectorWithList):  Consider replacing this Vector with the newer java.util.List
+src/tests/DataTest.java(44,  LocalVariableCouldBeFinal):  Local variable 'times' could be declared final
+src/tests/DataTest.java(44,  UseArrayListInsteadOfVector):  Use ArrayList instead of Vector
+src/tests/DataTest.java(48,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(13,  BeanMembersShouldSerialize):  Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/tests/LoginTest.java(13,  DefaultPackage):  Use explicit scoping instead of the default package private level
+src/tests/LoginTest.java(15,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/LoginTest.java(16,  LocalVariableCouldBeFinal):  Local variable 'testString' could be declared final
+src/tests/LoginTest.java(16,  AvoidDuplicateLiterals):  The String literal "admin" appears 4 times in this file; the first occurrence is on line 16
+src/tests/LoginTest.java(18,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(20,  LocalVariableCouldBeFinal):  Local variable 'input' could be declared final
+src/tests/LoginTest.java(21,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(23,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(24,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(26,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(26,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(31,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/LoginTest.java(32,  LocalVariableCouldBeFinal):  Local variable 'testString' could be declared final
+src/tests/LoginTest.java(32,  AvoidDuplicateLiterals):  The String literal "1234" appears 4 times in this file; the first occurrence is on line 32
+src/tests/LoginTest.java(34,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(36,  LocalVariableCouldBeFinal):  Local variable 'input' could be declared final
+src/tests/LoginTest.java(37,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(39,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(40,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(42,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(42,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(48,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/LoginTest.java(50,  LocalVariableCouldBeFinal):  Local variable 'testuser' could be declared final
+src/tests/LoginTest.java(51,  LocalVariableCouldBeFinal):  Local variable 'testpsw' could be declared final
+src/tests/LoginTest.java(52,  LocalVariableCouldBeFinal):  Local variable 'user' could be declared final
+src/tests/LoginTest.java(53,  LocalVariableCouldBeFinal):  Local variable 'psw' could be declared final
+src/tests/LoginTest.java(54,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(55,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(56,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(57,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(58,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(59,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(61,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(61,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(66,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/LoginTest.java(67,  LocalVariableCouldBeFinal):  Local variable 'testuser' could be declared final
+src/tests/LoginTest.java(68,  LocalVariableCouldBeFinal):  Local variable 'user' could be declared final
+src/tests/LoginTest.java(69,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(70,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(71,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(73,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(77,  JUnitTestContainsTooManyAsserts):  JUnit tests should not contain more than 1 assert(s).
+src/tests/LoginTest.java(78,  LocalVariableCouldBeFinal):  Local variable 'testpsw' could be declared final
+src/tests/LoginTest.java(79,  LocalVariableCouldBeFinal):  Local variable 'psw' could be declared final
+src/tests/LoginTest.java(80,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/LoginTest.java(81,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(82,  LawOfDemeter):  Potential violation of Law of Demeter (object not created locally)
+src/tests/LoginTest.java(84,  JUnitAssertionsShouldIncludeMessage):  JUnit assertions should include a message
+src/tests/TestMains.java(15,  JUnitTestsShouldIncludeAssert):  JUnit tests should include assert() or fail()
+src/tests/TestMains.java(16,  LocalVariableCouldBeFinal):  Local variable 'args' could be declared final
+src/tests/TestMains.java(21,  JUnitTestsShouldIncludeAssert):  JUnit tests should include assert() or fail()
+src/tests/TestMains.java(22,  LocalVariableCouldBeFinal):  Local variable 'args' could be declared final
+src/tests/TestMains.java(26,  JUnitTestsShouldIncludeAssert):  JUnit tests should include assert() or fail()
+src/tests/TestMains.java(27,  LocalVariableCouldBeFinal):  Local variable 'args' could be declared final
+src/tests/TestMains.java(32,  JUnitTestsShouldIncludeAssert):  JUnit tests should include assert() or fail()
+src/tests/TestMains.java(33,  LocalVariableCouldBeFinal):  Local variable 'args' could be declared final
+src/tests/TestMains.java(38,  JUnitTestsShouldIncludeAssert):  JUnit tests should include assert() or fail()
+src/tests/TestMains.java(39,  LocalVariableCouldBeFinal):  Local variable 'args' could be declared final
+src/tests/TestUtils.java(6,  UseSingleton):  All methods are static.  Consider using Singleton instead.  Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/tests/TestUtils.java(7,  MethodArgumentCouldBeFinal):  Parameter 'name' is not assigned and could be declared final
+src/tests/TestUtils.java(7,  MethodArgumentCouldBeFinal):  Parameter 'parent' is not assigned and could be declared final
+src/tests/TestUtils.java(12,  OnlyOneReturn):  A method should have only one exit point, and that should be the last statement in the method
+src/tests/TestUtils.java(14,  LocalVariableCouldBeFinal):  Local variable 'children' could be declared final
+src/tests/TestUtils.java(14,  LawOfDemeter):  Potential violation of Law of Demeter (method chain calls)
+src/tests/TestUtils.java(17,  LocalVariableCouldBeFinal):  Local variable 'child' could be declared final
+src/tests/TestUtils.java(17,  LawOfDemeter):  Potential violation of Law of Demeter (method chain calls)
+src/tests/TestUtils.java(18,  OnlyOneReturn):  A method should have only one exit point, and that should be the last statement in the method

@@ -24,6 +24,7 @@
 5.	Στον φάκελο mysql Database dump βρίσκονται όλα τα .sql αρχέια της Βάσης μας (Backup - dump)
 6.	Ο Φάκελος SoftEng είναι ουσιαστικά το Java Project του Eclipse.
 7.	Στον φάκελο UML Diagrams βρίσκονται όλα τα UML Διαγράμματα σε PNG μορφή.Δημιουργήθηκαν  όλα (εκτος απο το διάγραμμα κλάσεων) με το Visual Paradigm
+8.  Στον φάκελο PMD Reports βρίσκονται τα Reports απο το PMD Static Analysis πρίν και μετά.
 
 Instructions
 ------------
