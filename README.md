@@ -35,7 +35,7 @@ Instructions
 public class JDBCMySQLConnection {
 public static final String URL = "jdbc:mysql://localhost/test";
     	`public static final String USER = "root";
-    	`public static final String PASSWORD = "daggeras4ever";
+    	`public static final String PASSWORD = "password";
 public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
 ...
 ...
